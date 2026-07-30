@@ -1,0 +1,9 @@
+{
+  "version": "golden-1.0",
+  "siteTitle": "رحلة الحروف مع المعلم سعد",
+  "language": "ar",
+  "direction": "rtl",
+  "audioFormat": "webm",
+  "progressStorage": "localStorage",
+  "githubPagesReady": true
+}
