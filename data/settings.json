@@ -1,0 +1,10 @@
+{
+  "version": "official-2.0",
+  "siteTitle": "رحلة الحروف مع المعلم سعد",
+  "tagline": "نتعلم ونقرأ ونستمتع",
+  "language": "ar",
+  "direction": "rtl",
+  "audioFormat": "webm",
+  "progressStorage": "localStorage",
+  "githubPagesReady": true
+}
