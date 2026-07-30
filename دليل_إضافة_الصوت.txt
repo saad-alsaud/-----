@@ -1,0 +1,45 @@
+دليل إضافة الصوت — رحلة الحروف مع المعلم سعد
+================================================
+
+لا تعدل ملف index.html.
+ضع ملفات MP3 في المسارات التالية فقط:
+
+الصوت الترحيبي العام:
+assets/audio/welcome.mp3
+
+حرف الميم:
+assets/audio/meem/intro.mp3
+assets/audio/meem/story.mp3
+assets/audio/meem/success.mp3
+
+حرف الباء:
+assets/audio/baa/intro.mp3
+assets/audio/baa/story.mp3
+assets/audio/baa/success.mp3
+
+حرف اللام:
+assets/audio/laam/intro.mp3
+assets/audio/laam/story.mp3
+assets/audio/laam/success.mp3
+
+حرف الدال:
+assets/audio/daal/intro.mp3
+assets/audio/daal/story.mp3
+assets/audio/daal/success.mp3
+
+حرف النون:
+assets/audio/noon/intro.mp3
+assets/audio/noon/story.mp3
+assets/audio/noon/success.mp3
+
+حرف الراء:
+assets/audio/raa/intro.mp3
+assets/audio/raa/story.mp3
+assets/audio/raa/success.mp3
+
+ملاحظات:
+1) استخدم صيغة MP3.
+2) حافظ على الحروف الإنجليزية الصغيرة في أسماء الملفات.
+3) لا تضف مسافات أو أرقاماً إلى أسماء الملفات.
+4) يمكن استبدال أي تسجيل لاحقاً برفع ملف جديد بالاسم نفسه.
+5) افتح audio-manager.html من موقعك لفحص الملفات الموجودة والمفقودة.
