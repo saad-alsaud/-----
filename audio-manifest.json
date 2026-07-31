@@ -1,37 +1,96 @@
 {
-  "version": "2.0-official",
+  "version": "3.0.0",
   "format": "webm",
-  "welcome": "assets/audio/welcome.webm",
-  "letters": {
-    "م": {
-      "intro": "assets/audio/meem/intro.webm",
-      "story": "assets/audio/meem/story.webm",
-      "success": "assets/audio/meem/success.webm"
+  "files": [
+    {
+      "letter": "meem",
+      "type": "intro",
+      "path": "assets/audio/meem/intro.webm"
     },
-    "ب": {
-      "intro": "assets/audio/baa/intro.webm",
-      "story": "assets/audio/baa/story.webm",
-      "success": "assets/audio/baa/success.webm"
+    {
+      "letter": "meem",
+      "type": "story",
+      "path": "assets/audio/meem/story.webm"
     },
-    "ل": {
-      "intro": "assets/audio/laam/intro.webm",
-      "story": "assets/audio/laam/story.webm",
-      "success": "assets/audio/laam/success.webm"
+    {
+      "letter": "meem",
+      "type": "success",
+      "path": "assets/audio/meem/success.webm"
     },
-    "د": {
-      "intro": "assets/audio/daal/intro.webm",
-      "story": "assets/audio/daal/story.webm",
-      "success": "assets/audio/daal/success.webm"
+    {
+      "letter": "baa",
+      "type": "intro",
+      "path": "assets/audio/baa/intro.webm"
     },
-    "ن": {
-      "intro": "assets/audio/noon/intro.webm",
-      "story": "assets/audio/noon/story.webm",
-      "success": "assets/audio/noon/success.webm"
+    {
+      "letter": "baa",
+      "type": "story",
+      "path": "assets/audio/baa/story.webm"
     },
-    "ر": {
-      "intro": "assets/audio/raa/intro.webm",
-      "story": "assets/audio/raa/story.webm",
-      "success": "assets/audio/raa/success.webm"
+    {
+      "letter": "baa",
+      "type": "success",
+      "path": "assets/audio/baa/success.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "intro",
+      "path": "assets/audio/laam/intro.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "story",
+      "path": "assets/audio/laam/story.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "success",
+      "path": "assets/audio/laam/success.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "intro",
+      "path": "assets/audio/daal/intro.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "story",
+      "path": "assets/audio/daal/story.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "success",
+      "path": "assets/audio/daal/success.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "intro",
+      "path": "assets/audio/noon/intro.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "story",
+      "path": "assets/audio/noon/story.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "success",
+      "path": "assets/audio/noon/success.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "intro",
+      "path": "assets/audio/raa/intro.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "story",
+      "path": "assets/audio/raa/story.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "success",
+      "path": "assets/audio/raa/success.webm"
     }
-  }
+  ]
 }

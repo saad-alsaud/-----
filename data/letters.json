@@ -1,35 +1,8 @@
-{
-  "version": "official-2.0",
-  "letters": [
-    {
-      "key": "م",
-      "slug": "meem",
-      "name": "الميم"
-    },
-    {
-      "key": "ب",
-      "slug": "baa",
-      "name": "الباء"
-    },
-    {
-      "key": "ل",
-      "slug": "laam",
-      "name": "اللام"
-    },
-    {
-      "key": "د",
-      "slug": "daal",
-      "name": "الدال"
-    },
-    {
-      "key": "ن",
-      "slug": "noon",
-      "name": "النون"
-    },
-    {
-      "key": "ر",
-      "slug": "raa",
-      "name": "الراء"
-    }
-  ]
-}
+[
+  {"id":"meem","letter":"م","name":"الميم","color":"#6d5ce8"},
+  {"id":"baa","letter":"ب","name":"الباء","color":"#1787d4"},
+  {"id":"laam","letter":"ل","name":"اللام","color":"#15a46d"},
+  {"id":"daal","letter":"د","name":"الدال","color":"#e69a24"},
+  {"id":"noon","letter":"ن","name":"النون","color":"#e45e78"},
+  {"id":"raa","letter":"ر","name":"الراء","color":"#8a61c9"}
+]

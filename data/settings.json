@@ -1,6 +1,7 @@
 {
-  "direction": "rtl",
-  "theme": "official-v2",
+  "version": "3.0.0",
   "title": "رحلة الحروف مع المعلم سعد",
-  "tagline": "نتعلم ونقرأ ونستمتع"
+  "tagline": "نتعلم ونقرأ ونستمتع",
+  "direction": "rtl",
+  "lettersOrder": ["meem", "baa", "laam", "daal", "noon", "raa"]
 }
