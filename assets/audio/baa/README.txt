@@ -1,5 +1,1 @@
-حرف الباء
-ضع التسجيلات هنا بالأسماء:
-intro.webm
-story.webm
-success.webm
+ضع هنا intro.webm و story.webm و success.webm

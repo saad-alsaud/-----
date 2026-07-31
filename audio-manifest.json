@@ -1,9 +1,8 @@
 {
-  "version": "golden-1.0",
+  "version": "2.0-official",
   "format": "webm",
-  "voice": "male-arabic-approved",
-  "files": {
-    "welcome": "assets/audio/welcome.webm",
+  "welcome": "assets/audio/welcome.webm",
+  "letters": {
     "م": {
       "intro": "assets/audio/meem/intro.webm",
       "story": "assets/audio/meem/story.webm",
@@ -34,6 +33,5 @@
       "story": "assets/audio/raa/story.webm",
       "success": "assets/audio/raa/success.webm"
     }
-  },
-  "note_ar": "أضف ملفات WEBM بالأسماء والمسارات المحددة، وسيعمل الموقع تلقائياً دون تعديل الكود. يدعم الموقع أيضاً MP3 وOGG عند توفرها."
+  }
 }

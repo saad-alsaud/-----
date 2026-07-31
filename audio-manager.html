@@ -9,13 +9,13 @@ body{font-family:Tahoma,Arial,sans-serif;background:#f6f8fb;margin:0;color:#2030
 <body><main class="wrap"><h1>فحص التسجيلات الصوتية</h1><div class="note">هذه الصفحة لا ترفع الملفات إلى GitHub، لكنها تفحص تلقائياً الملفات التي أضفتها وتبيّن الموجود والمفقود.</div><div class="top"><button onclick="location.reload()">إعادة الفحص</button><a class="btn" href="index.html">فتح الموقع</a></div><div id="grid" class="grid"></div></main>
 <script>
 const groups={
-'عام':['assets/audio/welcome.webm'],
-'حرف الميم':['assets/audio/meem/intro.webm','assets/audio/meem/story.webm','assets/audio/meem/success.webm'],
-'حرف الباء':['assets/audio/baa/intro.webm','assets/audio/baa/story.webm','assets/audio/baa/success.webm'],
-'حرف اللام':['assets/audio/laam/intro.webm','assets/audio/laam/story.webm','assets/audio/laam/success.webm'],
-'حرف الدال':['assets/audio/daal/intro.webm','assets/audio/daal/story.webm','assets/audio/daal/success.webm'],
-'حرف النون':['assets/audio/noon/intro.webm','assets/audio/noon/story.webm','assets/audio/noon/success.webm'],
-'حرف الراء':['assets/audio/raa/intro.webm','assets/audio/raa/story.webm','assets/audio/raa/success.webm']};
+'عام':['assets/audio/welcome.mp3'],
+'حرف الميم':['assets/audio/meem/intro.mp3','assets/audio/meem/story.mp3','assets/audio/meem/success.mp3'],
+'حرف الباء':['assets/audio/baa/intro.mp3','assets/audio/baa/story.mp3','assets/audio/baa/success.mp3'],
+'حرف اللام':['assets/audio/laam/intro.mp3','assets/audio/laam/story.mp3','assets/audio/laam/success.mp3'],
+'حرف الدال':['assets/audio/daal/intro.mp3','assets/audio/daal/story.mp3','assets/audio/daal/success.mp3'],
+'حرف النون':['assets/audio/noon/intro.mp3','assets/audio/noon/story.mp3','assets/audio/noon/success.mp3'],
+'حرف الراء':['assets/audio/raa/intro.mp3','assets/audio/raa/story.mp3','assets/audio/raa/success.mp3']};
 async function exists(path){try{const r=await fetch(path,{method:'HEAD',cache:'no-store'});return r.ok}catch(e){return false}}
 (async()=>{const grid=document.getElementById('grid');for(const [name,files] of Object.entries(groups)){const c=document.createElement('section');c.className='card';c.innerHTML=`<h2>${name}</h2>`;grid.appendChild(c);for(const f of files){const row=document.createElement('div');row.className='row';row.innerHTML=`<span class="dot"></span><code>${f}</code><span class="status">جارٍ الفحص…</span>`;c.appendChild(row);const ok=await exists(f);row.classList.add(ok?'ok':'bad');row.querySelector('.status').textContent=ok?'موجود':'مفقود';}}})();
 </script></body></html>

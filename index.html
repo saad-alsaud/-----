@@ -1,38 +1,638 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1769d2"><meta name="app-version" content="official-2.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#165b44">
 <title>رحلة الحروف مع المعلم سعد</title>
+<meta name="app-version" content="2.0.3">
 <style>
-:root{--ink:#16355a;--muted:#65758b;--bg:#f5f9ff;--paper:#fff;--line:#dfe9f4;--blue:#1769d2;--green:#2f9b4b;--orange:#ef7d00;--purple:#7543c7;--shadow:0 14px 38px rgba(26,67,113,.11);--r:24px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#eff8ff,#fff 38%,#f7fbff);font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);overflow-x:hidden}button,a{font:inherit}button{cursor:pointer}.app{max-width:1600px;margin:auto;padding:10px 14px 24px}.identity{position:sticky;top:0;z-index:80;background:rgba(245,249,255,.94);backdrop-filter:blur(12px);padding:8px 0}.identity picture,.identity img{display:block;width:100%}.identity img{height:auto;max-height:340px;object-fit:cover;border-radius:22px;border:1px solid #83bce9;box-shadow:var(--shadow)}
-.shell{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:14px;margin-top:14px}.main{min-width:0}.sidebar{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:15px;box-shadow:var(--shadow);height:max-content;position:sticky;top:365px}.sidebar h2{font-size:20px;text-align:center;margin:0 0 10px}.letters{display:grid;gap:8px}.letter-btn{border:1px solid var(--line);background:#fff;border-radius:16px;padding:10px;display:flex;align-items:center;gap:10px;font-weight:900;color:var(--ink);transition:.2s}.letter-btn:hover,.letter-btn.active{background:#eef6ff;border-color:#99c4f5;color:#0c57b2}.letter-dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:25px}.studio-link{margin-top:14px;display:block;text-align:center;text-decoration:none;background:linear-gradient(135deg,#1769d2,#0b54b4);color:#fff;border-radius:16px;padding:13px;font-weight:900}.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);text-align:center}.hero h1{font-size:clamp(30px,4vw,52px);margin:0;color:#0d54ae}.hero p{font-size:18px;color:var(--muted);margin:8px 0 0}.big-letter{font-size:74px;line-height:1;color:#e94366;font-weight:950}.progress-wrap{margin:15px 0 0;background:#edf3f8;height:10px;border-radius:99px;overflow:hidden}.progress{height:100%;width:0;background:linear-gradient(90deg,#29a658,#ffd041);transition:.35s}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;min-height:380px}.card:nth-child(1){background:linear-gradient(180deg,#f4f9ff,#fff)}.card:nth-child(2){background:linear-gradient(180deg,#f3fff3,#fff)}.card:nth-child(3){background:linear-gradient(180deg,#fff8ee,#fff)}.card:nth-child(4){background:linear-gradient(180deg,#faf5ff,#fff)}.step{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:950;margin-left:auto}.card h3{font-size:23px;margin:10px 0}.illustration{font-size:66px;margin:8px 0}.text{font-size:17px;line-height:1.95;color:#243e5b;flex:1}.action{border:0;border-radius:15px;color:#fff;padding:12px 14px;font-weight:950;margin-top:12px;min-height:48px}.intro .action{background:#1769d2}.story .action{background:#2f9b4b}.activity .action{background:#ef7d00}.success .action{background:#7543c7}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.choice{border:2px solid #e5eaf0;background:#fff;border-radius:14px;padding:8px;font-weight:850}.choice.good{border-color:#36aa64;background:#eaffeF}.choice.bad{border-color:#ef6b76;background:#fff0f2}.feedback{min-height:26px;margin-top:8px;font-weight:900}.family{margin-top:14px;display:grid;grid-template-columns:1.2fr 1fr;gap:14px}.family-card,.features{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.family-card img{width:100%;height:100%;min-height:260px;object-fit:cover}.features{padding:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.feature{border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}.feature b{display:block;margin:7px 0}.footer{text-align:center;color:var(--muted);font-size:14px;padding:18px}.menu{display:none;position:fixed;bottom:16px;left:16px;z-index:90;border:0;border-radius:50%;width:54px;height:54px;background:#1769d2;color:#fff;font-size:25px;box-shadow:var(--shadow)}.toast{position:fixed;bottom:18px;right:50%;transform:translate(50%,30px);background:#16355a;color:#fff;padding:12px 18px;border-radius:14px;opacity:0;transition:.25s;z-index:110}.toast.show{opacity:1;transform:translate(50%,0)}
-@media(max-width:1150px){.cards{grid-template-columns:repeat(2,1fr)}.shell{grid-template-columns:minmax(0,1fr) 190px}.sidebar{top:300px}}
-@media(max-width:760px){.app{padding:6px 8px 18px}.identity{padding:4px 0}.identity img{border-radius:14px;max-height:none}.shell{display:block}.sidebar{position:fixed;top:0;right:0;width:min(310px,88vw);height:100vh;border-radius:0;z-index:100;transform:translateX(105%);transition:.3s;overflow:auto}.sidebar.open{transform:none}.menu{display:block}.hero{padding:16px}.cards{grid-template-columns:1fr}.card{min-height:auto}.family{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}.identity picture img{aspect-ratio:19/9;object-fit:cover}.hero h1{font-size:30px}.big-letter{font-size:58px}}
-@media(max-width:430px){.features{grid-template-columns:1fr}.identity picture img{aspect-ratio:19/10}.card{padding:15px}.text{font-size:16px}.choices{grid-template-columns:1fr 1fr}}
-</style></head>
-<body><div class="app">
-<header class="identity"><picture><source media="(max-width:600px)" srcset="assets/images/header-mobile.webp"><source media="(max-width:1050px)" srcset="assets/images/header-tablet.webp"><img src="assets/images/header-desktop.webp" alt="رحلة الحروف مع المعلم سعد — نتعلم ونقرأ ونستمتع"></picture></header>
-<div class="shell"><main class="main"><section class="hero"><div class="big-letter" id="bigLetter">م</div><h1 id="lessonTitle">حرف الميم</h1><p id="episode">الحلقة الأولى: الفطور العائلي</p><div class="progress-wrap"><div class="progress" id="progress"></div></div></section>
-<section class="cards">
-<article class="card intro"><div class="step" style="background:#1769d2">١</div><h3>مقدمة الحرف</h3><div class="illustration">📣</div><p class="text" id="introText"></p><button class="action" onclick="playAudio('intro')">🔊 استمع</button></article>
-<article class="card story"><div class="step" style="background:#2f9b4b">٢</div><h3>قصة الحرف</h3><div class="illustration">📖</div><p class="text" id="storyText"></p><button class="action" onclick="playAudio('story')">🔊 استمع</button></article>
-<article class="card activity"><div class="step" style="background:#ef7d00">٣</div><h3>نشاط الحرف</h3><div class="illustration">✏️</div><p class="text" id="activityText"></p><div class="choices" id="choices"></div><div class="feedback" id="feedback"></div></article>
-<article class="card success"><div class="step" style="background:#7543c7">٤</div><h3>رسالة الإنجاز</h3><div class="illustration">🏆</div><p class="text" id="successText"></p><button class="action" onclick="playAudio('success')">🔊 استمع</button></article>
+:root{
+ --bg:#f5f7f6;--paper:#fff;--ink:#17324d;--muted:#6c7b88;--green:#15845c;--green2:#20a36f;
+ --blue:#1965c7;--gold:#f5b82e;--red:#ef5d68;--line:#e5ece8;--shadow:0 18px 50px rgba(23,50,77,.10);
+ --radius:26px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);background:
+radial-gradient(circle at 10% 5%,#e7f4ff 0 10%,transparent 11%),
+radial-gradient(circle at 90% 5%,#fff4d7 0 8%,transparent 9%),var(--bg)}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:4px solid #a9d7c7;outline-offset:3px}
+.app{min-height:100vh}
+.header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.94);backdrop-filter:blur(15px);
+ border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:12px 20px}
+.header-title{font-size:clamp(24px,3.2vw,48px);font-weight:950;color:#173d86;text-align:center}
+.header-title span{color:var(--green)}
+.h-left,.h-right{display:flex;align-items:center;gap:10px}
+.h-left{justify-content:flex-start}.h-right{justify-content:flex-end}
+.icon-btn{border:1px solid var(--line);background:#fff;border-radius:18px;padding:11px 14px;font-weight:900;color:var(--ink);box-shadow:0 7px 20px rgba(0,0,0,.06)}
+.layout{display:grid;grid-template-columns:330px minmax(0,1fr);max-width:1600px;margin:auto}
+.sidebar{position:sticky;top:77px;height:calc(100vh - 77px);background:rgba(255,255,255,.88);backdrop-filter:blur(12px);
+ border-left:1px solid var(--line);padding:18px;overflow:auto}
+.side-title{background:linear-gradient(135deg,#155dc2,#2878dc);color:white;padding:15px;border-radius:18px;font-weight:950;font-size:20px;
+ display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 25px rgba(25,101,199,.2)}
+.nav-card{border:1px solid var(--line);background:#fff;border-radius:18px;padding:12px;margin-top:10px;box-shadow:0 7px 18px rgba(0,0,0,.05)}
+.nav-item{width:100%;border:0;background:#fff;border-radius:15px;padding:13px 14px;display:flex;align-items:center;gap:12px;text-align:right;
+ font-weight:900;color:var(--ink);margin:4px 0}
+.nav-item:hover,.nav-item.active{background:#eaf7f1;color:#0b6c49}
+.letter-icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-size:28px;font-weight:950;background:#eef5ff;color:#155dc2}
+.credit{margin-top:18px;border:1px solid var(--line);background:#fff;border-radius:20px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+.credit small{display:block;color:var(--muted);font-weight:800;margin-bottom:7px}
+.credit strong{color:var(--green);font-size:18px}
+.main{padding:24px;min-width:0}
+.screen{display:none;animation:fade .35s ease}.screen.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{display:grid;grid-template-columns:minmax(320px,1fr) 1.1fr;gap:18px;align-items:stretch}
+.teacher-panel,.welcome-panel,.card{background:#fff;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}
+.teacher-panel{position:relative;overflow:hidden;min-height:480px;background:linear-gradient(180deg,#fff,#eef9f4);display:flex;align-items:flex-end;justify-content:center}
+.teacher-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,#fff8cf 0 12%,transparent 13%),
+ radial-gradient(circle at 75% 30%,#dff3ff 0 14%,transparent 15%);opacity:.8}
+.teacher-img{position:relative;width:100%;height:100%;min-height:480px;object-fit:cover;object-position:center 20%;transition:.25s;transform-origin:center bottom}
+.teacher-img.speaking{animation:talk .55s ease-in-out infinite alternate}
+@keyframes talk{to{transform:translateY(-3px) scale(1.006)}}
+.blink{position:absolute;top:24%;left:50%;transform:translateX(-50%);width:50%;height:12px;background:transparent;pointer-events:none}
+.teacher-panel.speaking .blink{animation:blink 3.2s infinite}
+@keyframes blink{0%,95%,100%{opacity:0}96%,98%{opacity:1;background:rgba(30,20,15,.18);border-radius:50%}}
+.welcome-panel{padding:28px;display:flex;flex-direction:column;justify-content:center;min-height:480px;
+ background:linear-gradient(145deg,#ffffff,#fbfffd)}
+.bubble{position:relative;background:#fff;border:1px solid #edf0ee;border-radius:28px;padding:26px;box-shadow:0 12px 30px rgba(0,0,0,.07)}
+.bubble:after{content:"";position:absolute;right:-22px;top:55%;border:12px solid transparent;border-left-color:#fff}
+.bubble h1{font-size:clamp(30px,4vw,52px);margin:0 0 12px;line-height:1.35}
+.bubble p{font-size:20px;line-height:2;margin:0;color:#27435d}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.primary,.secondary,.success{border:0;border-radius:18px;padding:13px 18px;font-weight:950;transition:.2s}
+.primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 10px 22px rgba(21,132,92,.24)}
+.secondary{background:#eef5ff;color:#155dc2;border:1px solid #dce9fb}
+.success{background:linear-gradient(135deg,#f4b42a,#f59e0b);color:#fff}
+button:hover{transform:translateY(-2px)}
+.journey{margin-top:18px;display:grid;grid-template-columns:repeat(7,minmax(120px,1fr));gap:12px;overflow:auto;padding-bottom:8px}
+.stage{min-width:120px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.055)}
+.stage.active{border-color:#79c5a8;background:#eefaf5}.stage.done{background:#f5fff9}
+.stage .num{width:31px;height:31px;border-radius:50%;background:#6a42bf;color:white;display:grid;place-items:center;font-weight:950}
+.stage .emoji{font-size:38px;margin:8px 0}.stage strong{display:block;white-space:nowrap}
+.meter{height:8px;background:#e8ecea;border-radius:99px;overflow:hidden;margin-top:10px}.meter span{display:block;height:100%;width:10%;background:var(--green2)}
+.lesson-shell{display:grid;grid-template-columns:280px minmax(0,1fr);gap:18px}
+.teacher-mini{position:sticky;top:95px;height:max-content;background:#fff;border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:var(--shadow)}
+.teacher-mini img{width:100%;height:260px;object-fit:cover;object-position:center 18%;border-radius:20px}
+.teacher-mini.speaking img{animation:talk .55s ease-in-out infinite alternate}
+.mini-bubble{margin-top:12px;background:#f4fbf7;border-radius:18px;padding:14px;line-height:1.9;font-weight:800}
+.content{min-width:0}
+.lesson-title{background:linear-gradient(135deg,#fff8de,#ffffff 55%,#edf8ff);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.lesson-title h2{font-size:38px;margin:0 0 8px}.lesson-title p{color:var(--muted);font-size:18px;line-height:1.9}
+.panel{display:none}.panel.active{display:block}
+.card{padding:24px;margin-top:16px}
+.card h3{font-size:27px;margin:0 0 12px}.card p{font-size:19px;line-height:2}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.choice{border:2px solid #e8ecea;background:#fff;border-radius:22px;padding:20px;text-align:center;font-weight:950;font-size:20px}
+.choice .pic{font-size:48px;display:block;margin-bottom:8px}
+.choice.correct{border-color:#5bc493;background:#effcf6}.choice.wrong{border-color:#f58f97;background:#fff3f4}
+.feedback{display:none;margin-top:14px;border-radius:17px;padding:14px 16px;font-weight:950}
+.feedback.show{display:block}.feedback.good{background:#eafaf2;color:#0f704e}.feedback.bad{background:#fff0f1;color:#b62f3c}
+.game{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:650px;margin:auto}
+.mem{aspect-ratio:1;border:0;border-radius:20px;background:linear-gradient(135deg,#1b67c9,#6b45bf);color:white;font-size:0;font-weight:950}
+.mem.open,.mem.matched{background:#fff;color:#165b44;font-size:30px;border:2px solid #9ed8c1}.mem.matched{background:#eafaf2}
+.book-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.book-page{background:#fffdf5;border:1px solid #eadfbf;border-radius:22px;padding:20px;min-height:250px}
+.big-letter{font-size:85px;text-align:center;color:#136c4e;font-weight:950}
+.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.pill{background:#fff4d8;border:1px solid #f5d692;border-radius:13px;padding:8px 12px;font-weight:900}
+.badge{width:220px;height:220px;border-radius:50%;margin:20px auto;background:radial-gradient(circle,#fff 0 47%,#ffd363 48% 61%,#eaa51d 62%);
+ display:grid;place-items:center;font-size:90px;box-shadow:0 18px 35px rgba(229,161,22,.25)}
+.badge-banner{text-align:center;background:linear-gradient(135deg,#eaf7ff,#fff8e5);border-radius:25px;padding:25px}
+.audio-note{background:#fff7dc;border:1px solid #f3d37d;border-radius:18px;padding:13px 15px;margin-top:14px;color:#805a00;font-weight:800}
+.toast{position:fixed;left:18px;bottom:18px;background:#17324d;color:#fff;padding:13px 17px;border-radius:15px;opacity:0;transform:translateY(20px);transition:.3s;z-index:100}
+.toast.show{opacity:1;transform:none}
+.menu-btn{display:none}
+@media(max-width:1050px){
+ .layout{grid-template-columns:1fr}.sidebar{position:fixed;right:0;top:0;z-index:100;width:min(340px,90vw);height:100vh;transform:translateX(105%);transition:.3s;background:#fff}
+ .sidebar.open{transform:none}.menu-btn{display:inline-block}.hero{grid-template-columns:1fr}.teacher-panel{min-height:400px}.teacher-img{min-height:400px}
+ .lesson-shell{grid-template-columns:1fr}.teacher-mini{position:relative;top:auto;display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center}.teacher-mini img{height:170px}
+}
+@media(max-width:680px){
+ .header{grid-template-columns:auto 1fr auto;padding:9px}.header-title{font-size:22px}.h-left .icon-btn:not(:first-child){display:none}
+ .main{padding:12px}.teacher-panel{min-height:340px}.teacher-img{min-height:340px}.welcome-panel{min-height:auto;padding:18px}
+ .bubble h1{font-size:30px}.bubble p{font-size:17px}.choice-grid,.book-grid{grid-template-columns:1fr}.teacher-mini{grid-template-columns:110px 1fr}.teacher-mini img{height:130px}
+}
+
+.confetti{position:fixed;top:-40px;z-index:999;font-style:normal;font-size:28px;pointer-events:none;animation:confettiFall 2.7s ease-in forwards}
+@keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+.unit-party .header-title{animation:partyPulse .55s ease-in-out 3 alternate}
+@keyframes partyPulse{to{transform:scale(1.06)}}
+
+
+/* تحسينات التوافق الشامل: الحاسوب والجوال والأجهزة اللوحية */
+html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+img,svg,video,canvas{max-width:100%}
+button{touch-action:manipulation;min-height:44px}
+.main,.content,.hero>*,.lesson-shell>*{min-width:0}
+.journey{grid-template-columns:repeat(7,minmax(0,1fr));overflow:visible}
+.stage{min-width:0}
+.stage strong{white-space:normal;line-height:1.45;overflow-wrap:anywhere}
+.game{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+.mem{min-width:0}
+.bubble,.card,.lesson-title,.welcome-panel,.teacher-panel{max-width:100%}
+
+@media(max-width:1050px){
+ body.menu-open{overflow:hidden}
+ .sidebar{padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(18px,env(safe-area-inset-bottom))}
+ .journey{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media(max-width:680px){
+ .header{padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) 8px max(8px,env(safe-area-inset-left));gap:6px}
+ .header-title{font-size:clamp(17px,5.3vw,22px);line-height:1.25;min-width:0;overflow-wrap:anywhere}
+ .icon-btn{padding:9px 11px;border-radius:14px;white-space:nowrap}
+ .hero{gap:12px}
+ .teacher-panel{min-height:270px;max-height:58vh}
+ .teacher-img{min-height:270px;max-height:58vh;object-position:center 18%}
+ .welcome-panel{padding:14px}
+ .bubble{padding:18px;border-radius:22px}
+ .bubble:after{display:none}
+ .bubble h1{font-size:clamp(25px,8vw,32px)}
+ .bubble p{font-size:17px;line-height:1.8}
+ .actions{display:grid;grid-template-columns:1fr;width:100%}
+ .actions button{width:100%;white-space:normal}
+ .journey{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-bottom:0}
+ .stage{padding:10px 7px;border-radius:17px}
+ .stage .emoji{font-size:30px;margin:5px 0}
+ .stage .num{width:27px;height:27px;font-size:14px}
+ .lesson-title{padding:18px;border-radius:22px}
+ .lesson-title h2{font-size:clamp(28px,9vw,36px)}
+ .lesson-title p{font-size:16px}
+ .card{padding:17px;margin-top:12px;border-radius:22px}
+ .card h3{font-size:23px}
+ .card p{font-size:17px;line-height:1.85}
+ .choice{padding:16px 10px;font-size:18px;min-width:0;overflow-wrap:anywhere}
+ .choice .pic{font-size:42px}
+ .teacher-mini{grid-template-columns:90px minmax(0,1fr);padding:10px;border-radius:22px}
+ .teacher-mini img{height:105px;border-radius:16px}
+ .mini-bubble{margin-top:0;padding:11px;font-size:15px;line-height:1.7;min-width:0}
+ .book-page{min-height:auto;padding:16px}
+ .big-letter{font-size:68px}
+ .badge{width:min(190px,70vw);height:min(190px,70vw);font-size:76px}
+ .toast{left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));text-align:center}
+}
+
+@media(max-width:420px){
+ .header{grid-template-columns:auto minmax(0,1fr) auto}
+ .h-right .icon-btn:not(.menu-btn){font-size:0;width:44px;padding:8px}
+ .h-right .icon-btn:not(.menu-btn)::after{content:"⭐";font-size:20px}
+ .header-title{font-size:17px}
+ .main{padding:9px}
+ .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .game{gap:8px}
+ .mem{border-radius:15px}
+}
+
+@media(max-width:350px){
+ .header-title{font-size:15px}
+ .journey{grid-template-columns:1fr 1fr}
+ .teacher-mini{grid-template-columns:75px minmax(0,1fr)}
+ .teacher-mini img{height:90px}
+}
+
+@media(orientation:landscape) and (max-height:520px) and (max-width:1050px){
+ .teacher-panel{min-height:240px;max-height:75vh}
+ .teacher-img{min-height:240px;max-height:75vh}
+ .hero{grid-template-columns:minmax(220px,.75fr) minmax(0,1.25fr)}
+ .welcome-panel{min-height:240px}
+}
+
+
+/* تنقل خطوة بخطوة وتحسين تجربة الجوال */
+.panel .actions button[onclick="nextPanel()"]{display:none}
+.panel{scroll-margin-top:92px}
+.lesson-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:14px;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.lesson-nav button{flex:1;max-width:280px;border:0;border-radius:17px;padding:13px 16px;font-weight:950}
+.lesson-nav .prev{background:#eef5ff;color:#155dc2;border:1px solid #dce9fb}
+.lesson-nav .next{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff}
+.lesson-nav button:disabled{opacity:.42;cursor:not-allowed;transform:none}
+.lesson-nav-status{text-align:center;font-weight:900;color:var(--muted);min-width:120px}
+@media(max-width:680px){
+ .content{padding-bottom:92px}
+ .panel{scroll-margin-top:76px}
+ .lesson-nav{position:sticky;bottom:max(8px,env(safe-area-inset-bottom));z-index:60;margin:12px 0 0;padding:9px;border-radius:18px;box-shadow:0 10px 35px rgba(23,50,77,.18)}
+ .lesson-nav button{max-width:none;padding:12px 8px;font-size:16px}
+ .lesson-nav-status{display:none}
+ .teacher-mini{display:none}
+ .lesson-shell{display:block}
+ .journey#lessonSteps{margin-top:10px}
+ .journey#lessonSteps .stage{padding:8px 5px}
+ .journey#lessonSteps .stage .emoji{font-size:25px}
+ .journey#lessonSteps .stage strong{font-size:14px}
+ .journey#lessonSteps .meter{display:none}
+}
+
+
+/* الإصدار 2.3: شريط مراحل رأسي بجانب المحتوى على الجوال */
+@media(max-width:680px){
+  #lesson .content{
+    display:grid;
+    grid-template-columns:68px minmax(0,1fr);
+    grid-template-areas:
+      "title title"
+      "steps panel"
+      "steps nav";
+    column-gap:9px;
+    align-items:start;
+    padding-bottom:18px;
+  }
+  #lesson .lesson-title{grid-area:title;margin-bottom:10px}
+  #lesson #lessonSteps{
+    grid-area:steps;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin:0;
+    padding:0;
+    position:sticky;
+    top:72px;
+    z-index:45;
+    align-self:start;
+    max-height:calc(100vh - 84px - env(safe-area-inset-bottom));
+  }
+  #lesson #lessonSteps .stage{
+    width:68px;
+    min-height:58px;
+    padding:5px 3px;
+    border-radius:14px;
+    display:grid;
+    grid-template-columns:1fr;
+    place-items:center;
+    gap:1px;
+    box-shadow:0 5px 14px rgba(23,50,77,.08);
+  }
+  #lesson #lessonSteps .stage .num{display:none}
+  #lesson #lessonSteps .stage .emoji{font-size:21px;line-height:1;margin:0}
+  #lesson #lessonSteps .stage strong{font-size:11px;line-height:1.25;text-align:center;overflow-wrap:normal}
+  #lesson #lessonSteps .stage.active{
+    border:2px solid var(--green);
+    background:#e7f8f0;
+    color:#075c3d;
+    transform:none;
+  }
+  #lesson #lessonSteps .stage.done{background:#f3fff8}
+  #lesson .panel{
+    grid-area:panel;
+    margin:0;
+    min-width:0;
+    scroll-margin-top:78px;
+  }
+  #lesson .panel.active{display:block}
+  #lesson .lesson-nav{
+    grid-area:nav;
+    position:sticky;
+    bottom:max(7px,env(safe-area-inset-bottom));
+    margin:10px 0 0;
+    min-width:0;
+  }
+  #lesson .card{padding:14px;border-radius:19px}
+  #lesson .card h3{font-size:20px;margin-top:0}
+  #lesson .card p{font-size:16px;line-height:1.75}
+  #lesson .choice-grid{gap:8px}
+  #lesson .choice{padding:12px 7px;font-size:16px}
+  #lesson .choice .pic{font-size:36px}
+  #lesson .game{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  #lesson .mem{min-height:72px;font-size:25px}
+  #lesson .book-grid{grid-template-columns:1fr;gap:9px}
+  #lesson .book-page{padding:13px}
+  #lesson .badge{width:min(145px,55vw);height:min(145px,55vw);font-size:60px}
+}
+@media(max-width:370px){
+  #lesson .content{grid-template-columns:60px minmax(0,1fr);column-gap:7px}
+  #lesson #lessonSteps .stage{width:60px;min-height:55px}
+  #lesson #lessonSteps .stage strong{font-size:10px}
+  #lesson .lesson-nav button{font-size:14px;padding:10px 5px}
+}
+
+
+/* الإصدار 2.4: مشغل الصوت الموحد */
+.audio-player{position:fixed;left:18px;bottom:18px;z-index:120;display:none;align-items:center;gap:10px;max-width:min(440px,calc(100vw - 36px));padding:10px 12px;background:rgba(255,255,255,.97);border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 40px rgba(23,50,77,.18)}
+.audio-player.show{display:flex}.audio-player .audio-state{min-width:0;flex:1}.audio-player strong,.audio-player small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.audio-player small{color:var(--muted);margin-top:2px}.audio-player button{border:0;border-radius:13px;padding:10px 12px;font-weight:950}.audio-stop{background:#fff0f1;color:#a82d38}.audio-toggle{background:#eaf7f1;color:#0b6c49}
+.audio-ready{display:inline-flex;align-items:center;gap:7px;background:#eaf7f1;color:#0b6c49;border-radius:999px;padding:7px 11px;font-size:13px;font-weight:900;margin-top:8px}
+@media(max-width:700px){.audio-player{left:10px;bottom:10px;max-width:calc(100vw - 20px);padding:8px 9px}.audio-player button{padding:9px 10px}.audio-player strong{font-size:14px}.audio-player small{font-size:11px}}
+
+/* الهوية الرسمية 2.0 */
+.brand-identity{position:relative;background:#dff5ff;padding:clamp(8px,1.2vw,16px);border-bottom:1px solid #cfe8f4}
+.brand-identity picture{display:block;width:100%;line-height:0}
+.brand-identity img{display:block;width:100%}
+.brand-identity img{height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center top;border-radius:clamp(16px,2vw,28px);box-shadow:0 14px 38px rgba(28,91,126,.16)}
+.header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.96);backdrop-filter:blur(12px)}
+.header-title{font-size:clamp(15px,2vw,22px)}
+@media(max-width:700px){.brand-identity{padding:6px}.brand-identity img{max-height:none;border-radius:14px}.header-title{display:none}}
+
+/* الإصدار 2.0.1: تظهر صورة المعلم داخل الهوية البصرية العلوية فقط */
+.hero{grid-template-columns:minmax(0,1fr)}
+.welcome-panel{width:100%;min-height:360px}
+.lesson-shell{grid-template-columns:minmax(0,1fr)}
+.teacher-mini{position:relative;top:auto;padding:0;background:transparent;border:0;box-shadow:none}
+.teacher-mini .mini-bubble{margin:0 0 16px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px 20px;box-shadow:var(--shadow);font-weight:900;color:var(--ink)}
+.teacher-panel,.teacher-img,.teacher-mini img{display:none!important}
+@media(max-width:900px){.welcome-panel{min-height:auto}.teacher-mini{display:block}}
+</style>
+</head>
+<body>
+<div class="app">
+<section class="brand-identity" aria-label="الهوية البصرية الرسمية لمنصة رحلة الحروف">
+<picture>
+ <source media="(max-width: 600px)" srcset="assets/images/header-mobile.webp">
+ <source media="(max-width: 1024px)" srcset="assets/images/header-tablet.webp">
+ <img src="assets/images/header-desktop.webp" alt="رحلة الحروف مع المعلم سعد — نتعلم ونقرأ ونستمتع" width="1800" height="765">
+</picture>
 </section>
-<section class="family"><div class="family-card"><img src="assets/images/family.webp" alt="أسرة رحلة الحروف"></div><div class="features"><div class="feature">🎙️<b>صوت واضح ونقي</b><span>ملفات صوتية مستقلة لكل فقرة</span></div><div class="feature">🎓<b>تعلم ممتع</b><span>قصة ونشاط في كل حرف</span></div><div class="feature">🛡️<b>آمن وموثوق</b><span>لا إعلانات ولا روابط مشتتة</span></div><div class="feature">⭐<b>تقدم خطوة بخطوة</b><span>حفظ الإنجاز على الجهاز</span></div></div></section>
-</main><aside class="sidebar" id="sidebar"><h2>اختر حرفًا</h2><div class="letters" id="letters"></div><a class="studio-link" href="studio.html">🎙️ الاستوديو<br><small>تسجيل الصوت</small></a></aside></div>
-<footer class="footer">© 2026 رحلة الحروف مع المعلم سعد — الإصدار الرسمي 2.0</footer></div><button class="menu" onclick="toggleMenu()">☰</button><div class="toast" id="toast"></div>
+<header class="header">
+ <div class="h-left"><button class="icon-btn" onclick="showScreen('home')">🏠 الرئيسية</button></div>
+ <div class="header-title">رحلة الحروف <span>مع المعلم سعد</span></div>
+ <div class="h-right"><button class="icon-btn menu-btn" onclick="toggleMenu()">☰</button><button class="icon-btn" onclick="showScreen('badges')">⭐ الأوسمة</button></div>
+</header>
+
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+ <div class="side-title"><span>اختر حرفًا لبدء الرحلة</span><span>⌄</span></div>
+ <div class="nav-card" id="letterNav">
+  <button class="nav-item active" data-letter="م" onclick="openLesson('م')"><span class="letter-icon">م</span><span>حرف الميم</span><span>🍌</span></button>
+  <button class="nav-item" data-letter="ب" onclick="openLesson('ب')"><span class="letter-icon" style="color:#159563;background:#ecfff6">ب</span><span>حرف الباء</span><span>🦆</span></button>
+  <button class="nav-item" data-letter="ل" onclick="openLesson('ل')"><span class="letter-icon" style="color:#8a55c7;background:#f5eeff">ل</span><span>حرف اللام</span><span>🍋</span></button>
+  <button class="nav-item" data-letter="د" onclick="openLesson('د')"><span class="letter-icon" style="color:#d77a16;background:#fff4e8">د</span><span>حرف الدال</span><span>🐔</span></button>
+  <button class="nav-item" data-letter="ن" onclick="openLesson('ن')"><span class="letter-icon" style="color:#c24e76;background:#fff0f5">ن</span><span>حرف النون</span><span>⭐</span></button>
+  <button class="nav-item" data-letter="ر" onclick="openLesson('ر')"><span class="letter-icon" style="color:#168f9a;background:#eaffff">ر</span><span>حرف الراء</span><span>🪶</span></button>
+ </div>
+ <div class="credit"><small>تصميم وإعداد المعلم</small><strong>سعد السعود العتيبي</strong></div>
+</aside>
+
+<main class="main">
+<section id="home" class="screen active">
+ <div class="hero">
+  <div class="welcome-panel">
+   <div class="bubble"><h1>مَرْحَبًا بِكُمْ يَا أَبْطَالُ!</h1><p>أَنَا الْمُعَلِّمُ سَعْدٌ، سَأُرَافِقُكُمْ فِي رِحْلَةِ تَعَلُّمٍ مُمْتِعَةٍ وَمُفِيدَةٍ، إِنْ شَاءَ اللهُ.</p></div>
+   <div class="actions">
+    <button class="primary" onclick="playTeacher('welcome')">🔊 اسْتَمِعْ لِلتَّرْحِيبِ</button>
+    <button class="secondary" onclick="openLesson('م')">لِنَبْدَأْ بِحَرْفِ الْمِيمِ ←</button>
+   </div>
+   <div class="audio-note">أُعِدَّتْ أزرار الصوت لتشغيل تسجيلات رجالية ثابتة، وقد أُلغي صوت المتصفح الآلي تمامًا.<br><span class="audio-ready">🎙️ البنية الصوتية جاهزة لملفات MP3</span></div>
+  </div>
+ </div>
+ <div class="journey">
+  <div class="stage active"><span class="num">1</span><div class="emoji">👋</div><strong>المقدمة</strong><div class="meter"><span></span></div></div>
+  <div class="stage"><span class="num">2</span><div class="emoji">📖</div><strong>قصة الحرف</strong><div class="meter"><span></span></div></div>
+  <div class="stage"><span class="num">3</span><div class="emoji">📋</div><strong>نشاط تفاعلي</strong><div class="meter"><span></span></div></div>
+  <div class="stage"><span class="num">4</span><div class="emoji">🎮</div><strong>لعبة تعليمية</strong><div class="meter"><span></span></div></div>
+  <div class="stage"><span class="num">5</span><div class="emoji">📚</div><strong>صفحات الدرس</strong><div class="meter"><span></span></div></div>
+  <div class="stage"><span class="num">6</span><div class="emoji">🏆</div><strong>التقويم</strong><div class="meter"><span></span></div></div>
+  <div class="stage"><span class="num">7</span><div class="emoji">🎁</div><strong>وسام وإنجاز</strong><div class="meter"><span></span></div></div>
+ </div>
+</section>
+
+<section id="lesson" class="screen">
+ <div class="lesson-shell">
+  <aside class="teacher-mini" id="miniTeacher">
+<div class="mini-bubble" id="teacherText">هَيَّا يَا بَطَلُ، لِنَبْدَأْ رِحْلَتَنَا.</div>
+  </aside>
+  <div class="content">
+   <div class="lesson-title"><h2 id="lessonTitle">رحلة حرف الميم</h2><p id="lessonDesc"></p></div>
+   <div class="journey" id="lessonSteps"></div>
+   <div id="panel-intro" class="panel active card">
+    <h3>👋 مُقَدِّمَةُ الْحَرْفِ</h3><p id="introText"></p>
+    <div class="actions"><button class="primary" onclick="playTeacher('intro')">🔊 اسْتَمِعْ إِلَى الْمُعَلِّمِ سَعْدٍ</button><button class="secondary" onclick="nextPanel()">التَّالِي: قِصَّةُ الْحَرْفِ ←</button></div>
+   </div>
+   <div id="panel-story" class="panel card">
+    <h3>📖 قِصَّةُ الْحَرْفِ</h3><p id="storyText"></p>
+    <div class="actions"><button class="primary" onclick="playTeacher('story')">🔊 اسْتَمِعْ إِلَى الْقِصَّةِ</button><button class="secondary" onclick="nextPanel()">التَّالِي: النَّشَاطُ ←</button></div>
+   </div>
+   <div id="panel-activity" class="panel card">
+    <h3 id="activityTitle">📋 نَشَاطٌ تَفَاعُلِيٌّ</h3><div class="choice-grid" id="activityGrid"></div><div class="feedback" id="activityFeedback"></div>
+    <div class="actions"><button class="secondary" onclick="renderActivity()">إِعَادَةُ النَّشَاطِ</button><button class="primary" onclick="nextPanel()">التَّالِي: اللُّعْبَةُ ←</button></div>
+   </div>
+   <div id="panel-game" class="panel card">
+    <h3>🎮 لُعْبَةُ الذَّاكِرَةِ</h3><p>اِفْتَحْ بَطَاقَتَيْنِ مُتَشَابِهَتَيْنِ، وَاجْمَعِ الْأَزْوَاجَ الصَّحِيحَةَ.</p><div class="game" id="gameBoard"></div><div class="feedback" id="gameFeedback"></div>
+    <div class="actions"><button class="secondary" onclick="setupGame()">لُعْبَةٌ جَدِيدَةٌ</button><button class="primary" onclick="nextPanel()">التَّالِي: صَفَحَاتُ الدَّرْسِ ←</button></div>
+   </div>
+   <div id="panel-book" class="panel card">
+    <h3>📚 صَفَحَاتُ الدَّرْسِ</h3><div class="book-grid" id="bookGrid"></div><div class="actions"><button class="primary" onclick="nextPanel()">التَّالِي: التَّقْوِيمُ ←</button></div>
+   </div>
+   <div id="panel-quiz" class="panel card">
+    <h3 id="quizTitle">🏆 التَّقْوِيمُ</h3><div class="choice-grid" id="quizGrid"></div><div class="feedback" id="quizFeedback"></div>
+   </div>
+   <div id="panel-badge" class="panel card badge-banner">
+    <h3>🎁 وَسَامُ الْإِنْجَازِ</h3><div class="badge" id="badgeLetter">م</div><h2 id="badgeMsg">أَحْسَنْتَ يَا بَطَلُ!</h2>
+    <p>أَكْمَلْتَ رِحْلَةَ الْحَرْفِ بِنَجَاحٍ، وَأَصْبَحْتَ أَقْرَبَ إِلَى لَقَبِ بَطَلِ الْحُرُوفِ.</p>
+    <div class="actions" style="justify-content:center"><button class="success" onclick="openNext()">الِانْتِقَالُ إِلَى الْحَرْفِ التَّالِي ←</button></div>
+   </div>
+   <nav class="lesson-nav" aria-label="التنقل بين مراحل الرحلة">
+    <button id="prevStageBtn" class="prev" onclick="prevPanel()">→ السَّابِقُ</button>
+    <div id="stageStatus" class="lesson-nav-status" aria-live="polite"></div>
+    <button id="nextStageBtn" class="next" onclick="nextPanel()">التَّالِي ←</button>
+   </nav>
+  </div>
+ </div>
+</section>
+
+<section id="badges" class="screen">
+ <div class="card badge-banner"><h1>🏅 لَوْحَةُ الْإِنْجَازِ</h1><div id="badgeList" class="choice-grid"></div></div>
+</section>
+</main>
+</div>
+<div class="audio-player" id="audioPlayer" role="status" aria-live="polite">
+ <button class="audio-toggle" id="audioToggleBtn" onclick="toggleAudio()">⏸ إيقاف مؤقت</button>
+ <div class="audio-state"><strong id="audioTitle">صوت المعلم سعد</strong><small id="audioStatus">جارٍ التشغيل…</small></div>
+ <button class="audio-stop" onclick="stopAudio()">✕ إغلاق</button>
+</div>
+<audio id="teacherAudio" preload="none"></audio>
+<div class="toast" id="toast"></div>
+</div>
+
 <script>
-const lessons={"version": "official-2.0", "characters": {"grandfather": "مشعل", "grandmother": "فاطمة", "father": "سعد", "mother": "مريم", "olderSon": "فوّاز", "daughter": "نورة", "youngerSon": "ياسر"}, "letters": [{"key": "م", "slug": "meem", "name": "الميم", "color": "#1769d2", "episode": "الفطور العائلي", "intro": "مرحبًا يا أصدقائي! أنا المعلم سعد. اليوم نبدأ رحلتنا مع حرف الميم. استمعوا إلى صوته ورددوا معي: مَ، مِ، مُ.", "story": "اجتمعت الأسرة حول المائدة. وضعت الأم مريم الموز والحليب، وقال ياسر: ما ألذ الموز! ابتسم الجد مشعل وقال: مريم، مائدة، موز؛ كلها كلمات تبدأ بحرف الميم. ما الكلمة التي سمعتها وتبدأ بالميم؟", "activity": "اختر الكلمات التي تبدأ بحرف الميم: موز، مدرسة، باب، ورد.", "options": [["🍌", "موز", 1], ["🏫", "مدرسة", 1], ["🚪", "باب", 0], ["🌹", "ورد", 0]], "success": "أحسنت يا بطل! تعرفت على حرف الميم وصوته، واكتشفت كلمات تبدأ به. أنت تتقدم بثقة، وإلى حرف جديد!"}, {"key": "ب", "slug": "baa", "name": "الباء", "color": "#f3a511", "episode": "نزهة الحديقة", "intro": "أهلًا بكم من جديد! وصلنا إلى حرف الباء. هيا نستمع إلى صوته ونردده معًا: بَ، بِ، بُ.", "story": "خرجت الأسرة إلى الحديقة. حمل فوّاز بالونًا أزرق، وأحضرت نورة بسكويتًا، وجلس ياسر قرب بركة صغيرة. قالت الجدة فاطمة: بالون، بسكويت، بركة؛ كلها تبدأ بحرف الباء. أي كلمة تبدأ بالباء؟", "activity": "اختر الكلمات التي تبدأ بحرف الباء: بالون، بطة، قمر، سمكة.", "options": [["🎈", "بالون", 1], ["🦆", "بطة", 1], ["🌙", "قمر", 0], ["🐟", "سمكة", 0]], "success": "رائع! لقد أتقنت حرف الباء، وميزت صوته في الكلمات. واصل رحلتك الجميلة يا مبدع!"}, {"key": "ل", "slug": "laam", "name": "اللام", "color": "#ef5d68", "episode": "زيارة الجدين", "intro": "مرحبًا يا أصدقاء الحروف! درسنا اليوم عن حرف اللام. رددوا معي صوته: لَ، لِ، لُ.", "story": "زارت الأسرة الجد مشعل والجدة فاطمة. قدمت الجدة لنورة ليمونًا ولوزًا، وأضاء الجد مصباحًا جميلًا. قال الأب سعد: ليمون، لوز، ومصباح فيه حرف اللام. ما الكلمة التي تبدأ باللام؟", "activity": "اختر الكلمات التي تبدأ بحرف اللام: ليمون، لعبة، تفاح، قمر.", "options": [["🍋", "ليمون", 1], ["🧸", "لعبة", 1], ["🍎", "تفاح", 0], ["🌙", "قمر", 0]], "success": "ممتاز! تعلمت حرف اللام ووجدته في كلمات جميلة. استمر، فأنت قارئ صغير رائع!"}, {"key": "د", "slug": "daal", "name": "الدال", "color": "#37a35b", "episode": "ترتيب المنزل", "intro": "هيا نواصل رحلتنا! حرفنا اليوم هو الدال. استمعوا ورددوا: دَ، دِ، دُ.", "story": "ساعدت الأسرة في ترتيب المنزل. وضع فوّاز الدفاتر في الدرج، ورتبت نورة الدمى، وطرق ياسر الباب بيده. قالت الأم مريم: دفتر، درج، دمية؛ كلمات تبدأ بحرف الدال. أي كلمة سمعتها تبدأ بالدال؟", "activity": "اختر الكلمات التي تبدأ بحرف الدال: دفتر، دمية، شجرة، بيت.", "options": [["📒", "دفتر", 1], ["🪆", "دمية", 1], ["🌳", "شجرة", 0], ["🏠", "بيت", 0]], "success": "أبدعت! عرفت حرف الدال وصوته، واخترت كلماته الصحيحة. أنت تقترب من نهاية الرحلة!"}, {"key": "ن", "slug": "noon", "name": "النون", "color": "#7357c8", "episode": "العناية بالحديقة", "intro": "أهلًا بكم! نلتقي اليوم بحرف النون. فلنردد صوته بوضوح: نَ، نِ، نُ.", "story": "ذهبت الأسرة إلى الحديقة المنزلية. سقت نورة النعناع، وزرع فوّاز نبتة صغيرة، وشاهد ياسر نحلة قرب الأزهار. قال الجد مشعل: نورة، نعناع، نبتة، نحلة؛ تبدأ بحرف النون. ما الكلمة التي أعجبتك؟", "activity": "اختر الكلمات التي تبدأ بحرف النون: نحلة، نخلة، موز، كتاب.", "options": [["🐝", "نحلة", 1], ["🌴", "نخلة", 1], ["🍌", "موز", 0], ["📘", "كتاب", 0]], "success": "أحسنت جدًا! تعرفت على حرف النون وميزت كلماته. بقيت خطوة واحدة لإكمال الوحدة!"}, {"key": "ر", "slug": "raa", "name": "الراء", "color": "#19a6bf", "episode": "الرحلة العائلية", "intro": "وصلنا إلى آخر حرف في رحلتنا الأولى: حرف الراء. رددوا معي: رَ، رِ، رُ.", "story": "استعدت الأسرة لرحلة جميلة. ركبوا السيارة، وحمل فوّاز حقيبة الرحلة، ورأت نورة رمالًا واسعة، أما ياسر فرسم قوس قزح. قال الأب سعد: رحلة، رمال، رسم؛ تبدأ بحرف الراء. أي كلمة تبدأ بالراء؟", "activity": "اختر الكلمات التي تبدأ بحرف الراء: رمان، ريشة، باب، نجم.", "options": [["🍎", "رمان", 1], ["🪶", "ريشة", 1], ["🚪", "باب", 0], ["⭐", "نجم", 0]], "success": "تهانينا يا بطل! أتممت رحلة الحروف الأولى وتعلمت ستة حروف. نحن فخورون بك، وننتظرك في رحلة جديدة!"}]};
-let current=0;let audio=null;
-const el=id=>document.getElementById(id);
-function init(){el('letters').innerHTML=lessons.letters.map((l,i)=>`<button class="letter-btn ${i===0?'active':''}" onclick="selectLetter(${i})"><span class="letter-dot" style="background:${l.color}">${l.key}</span>${l.name}</button>`).join('');selectLetter(0)}
-function selectLetter(i){current=i;const l=lessons.letters[i];document.querySelectorAll('.letter-btn').forEach((b,n)=>b.classList.toggle('active',n===i));el('bigLetter').textContent=l.key;el('lessonTitle').textContent=`حرف ${l.name}`;el('episode').textContent=`الحلقة ${i+1}: ${l.episode}`;el('introText').textContent=l.intro;el('storyText').textContent=l.story;el('activityText').textContent=l.activity;el('successText').textContent=l.success;el('choices').innerHTML=l.options.map((o,n)=>`<button class="choice" onclick="answer(this,${o[2]})"><span>${o[0]}</span> ${o[1]}</button>`).join('');el('feedback').textContent='';el('progress').style.width=`${((i+1)/lessons.letters.length)*100}%`;localStorage.setItem('rahlet-current-letter',i);if(innerWidth<760)toggleMenu(false);scrollTo({top:0,behavior:'smooth'})}
-function answer(btn,ok){btn.classList.add(ok?'good':'bad');el('feedback').textContent=ok?'أحسنت! إجابة صحيحة ⭐':'حاول مرة أخرى يا بطل';el('feedback').style.color=ok?'#178040':'#c33';if(ok){const l=lessons.letters[current];let p=JSON.parse(localStorage.getItem('rahlet-progress')||'{}');p[l.slug]=true;localStorage.setItem('rahlet-progress',JSON.stringify(p))}}
-function playAudio(type){const l=lessons.letters[current];if(audio){audio.pause();audio=null}const path=`assets/audio/${l.slug}/${type}.webm`;audio=new Audio(path);audio.play().then(()=>toast('يتم تشغيل التسجيل')).catch(()=>toast('التسجيل غير مضاف بعد: '+path))}
-function toast(t){el('toast').textContent=t;el('toast').classList.add('show');setTimeout(()=>el('toast').classList.remove('show'),2600)}
-function toggleMenu(force){el('sidebar').classList.toggle('open',force===undefined?!el('sidebar').classList.contains('open'):force)}
-init();
-</script></body></html>
+const LETTER_ORDER=["م","ب","ل","د","ن","ر"];
+const DATA={
+ "م":{
+  name:"الْمِيمِ",desc:"نَتَعَرَّفُ عَلَى حَرْفِ الْمِيمِ، وَنَسْمَعُهُ فِي الْكَلِمَاتِ، ثُمَّ نَلْعَبُ وَنُنْجِزُ.",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَرَّفُ عَلَى حَرْفِ الْمِيمِ. رَدِّدُوا مَعِي: مْ... مْ... مْ. هَيَّا نَبْدَأُ رِحْلَتَنَا.",
+  story:"جَلَسَتِ الْأُسْرَةُ لِتَنَاوُلِ الْإِفْطَارِ. وَضَعَتِ الْأُمُّ مَرْيَمُ طَبَقًا مِنَ الْمَوْزِ، فَأَخَذَ يَاسِرٌ مَوْزَةً وَهُوَ يَبْتَسِمُ. قَالَ الْأَبُ سَعْدٌ: مَوْزٌ تَبْدَأُ بِحَرْفِ الْمِيمِ. هَلْ تَعْرِفُ كَلِمَةً أُخْرَى؟",
+  activityTitle:"اخْتَرِ الصُّوَرَ الَّتِي تَبْدَأُ بِحَرْفِ الْمِيمِ",activity:[["🍌","مَوْزٌ",1],["🏫","مَدْرَسَةٌ",1],["🚪","بَابٌ",0],["🦆","بَطَّةٌ",0]],
+  game:[["🍌","مَوْزٌ"],["🏫","مَدْرَسَةٌ"],["🌙","قَمَرٌ"]],
+  pages:[["أُسَمِّي وَأُلَاحِظُ","مَوْزٌ • مَدْرَسَةٌ • مَاءٌ"],["أَقْرَأُ وَأُجَرِّدُ","مَـ • مُـ • مِـ"],["مَوْقِعُ الْحَرْفِ","قَمَرٌ • سَمَكٌ • عَلَمٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","مَنْزِلٌ • مِلْعَقَةٌ • قَمَرٌ"]],
+  quiz:["أَيُّ كَلِمَةٍ تَحْتَوِي عَلَى حَرْفِ الْمِيمِ؟",[["كِتَابٌ",0],["قَمَرٌ",1],["بَابٌ",0],["تَاجٌ",0]]]
+ },
+ "ب":{
+  name:"الْبَاءِ",desc:"نَتَعَرَّفُ عَلَى حَرْفِ الْبَاءِ، وَنُمَيِّزُهُ فِي كَلِمَاتٍ مَأْلُوفَةٍ.",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَلَّمُ حَرْفَ الْبَاءِ. رَدِّدُوا مَعِي: بْ... بْ... بْ. هَيَّا بِنَا.",
+  story:"أَمْسَكَ فَوَّازٌ بَالُونًا مُلَوَّنًا، وَأَعْطَى نُورَةَ كِتَابًا صَغِيرًا. قَالَتِ الْجَدَّةُ فَاطِمَةُ: بَالُونٌ كَلِمَةٌ تَبْدَأُ بِحَرْفِ الْبَاءِ. ثُمَّ سَأَلَ الْجَدُّ مِشْعَلٌ: مَا كَلِمَةٌ أُخْرَى تَبْدَأُ بِالْبَاءِ؟",
+  activityTitle:"اخْتَرِ الصُّوَرَ الَّتِي تَبْدَأُ بِحَرْفِ الْبَاءِ",activity:[["🚪","بَابٌ",1],["🦆","بَطَّةٌ",1],["🍌","مَوْزٌ",0],["🌙","قَمَرٌ",0]],
+  game:[["🚪","بَابٌ"],["🦆","بَطَّةٌ"],["📘","كِتَابٌ"]],
+  pages:[["أُسَمِّي وَأُلَاحِظُ","بَابٌ • بَطَّةٌ • بُرْتُقَالٌ"],["أَقْرَأُ وَأُجَرِّدُ","بَـ • بُـ • بِـ"],["مَوْقِعُ الْحَرْفِ","كِتَابٌ • حَلِيبٌ • لُعْبَةٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","بَيْتٌ • بَابٌ • كِتَابٌ"]],
+  quiz:["أَيُّ كَلِمَةٍ تَبْدَأُ بِحَرْفِ الْبَاءِ؟",[["بَابٌ",1],["مَوْزٌ",0],["قَمَرٌ",0],["سَمَكٌ",0]]]
+ },
+ "ل":{
+  name:"اللَّامِ",desc:"نَتَعَرَّفُ عَلَى حَرْفِ اللَّامِ، وَنُمَيِّزُ صَوْتَهُ وَأَشْكَالَهُ فِي الْكَلِمَاتِ.",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَرَّفُ عَلَى حَرْفِ اللَّامِ. رَدِّدُوا مَعِي: لْ... لْ... لْ. لِنَبْدَأْ.",
+  story:"خَرَجَتْ نُورَةُ إِلَى الْحَدِيقَةِ، فَرَأَتْ لَيْمُونَةً عَلَى الشَّجَرَةِ. قَالَ الْجَدُّ مِشْعَلٌ: لَيْمُونَةٌ تَبْدَأُ بِحَرْفِ اللَّامِ. ابْتَسَمَ يَاسِرٌ وَقَالَ: أُحِبُّ اللَّيْمُونَ. هَلْ تَعْرِفُ كَلِمَةً أُخْرَى؟",
+  activityTitle:"الْتَقِطِ الْكَلِمَاتِ الَّتِي تَبْدَأُ بِحَرْفِ اللَّامِ",activity:[["🍋","لَيْمُونٌ",1],["🥛","لَبَنٌ",1],["🐟","سَمَكٌ",0],["🏠","بَيْتٌ",0]],
+  game:[["🍋","لَيْمُونٌ"],["🥛","لَبَنٌ"],["🌙","لَيْلٌ"]],
+  pages:[["أُسَمِّي وَأُلَاحِظُ","لَيْمُونٌ • لَبَنٌ • لُعْبَةٌ"],["أَقْرَأُ وَأُجَرِّدُ","لَـ • لُـ • لِـ"],["مَوْقِعُ الْحَرْفِ","قَلَمٌ • مَلِكٌ • جَمَلٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","لَيْلٌ • لَوْنٌ • لِسَانٌ"]],
+  quiz:["أَيُّ كَلِمَةٍ تَبْدَأُ بِحَرْفِ اللَّامِ؟",[["لَيْمُونٌ",1],["دُبٌّ",0],["نَجْمٌ",0],["رَمْلٌ",0]]]
+ },
+ "د":{
+  name:"الدَّالِ",desc:"نَسْمَعُ صَوْتَ الدَّالِ، وَنَتَعَرَّفُ عَلَى شَكْلِهِ فِي أَوَّلِ الْكَلِمَةِ وَوَسَطِهَا وَآخِرِهَا.",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَلَّمُ حَرْفَ الدَّالِ. رَدِّدُوا مَعِي: دْ... دْ... دْ. هَيَّا نَبْدَأُ.",
+  story:"عَادَ الْأَبُ سَعْدٌ إِلَى الْمَنْزِلِ، فَوَجَدَ يَاسِرًا يَلْعَبُ بِدُمْيَةٍ. قَالَ: دُمْيَةٌ تَبْدَأُ بِحَرْفِ الدَّالِ. أَشَارَ فَوَّازٌ إِلَى دَرَّاجَتِهِ وَقَالَ: وَدَرَّاجَةٌ أَيْضًا. هَلْ تَعْرِفُ كَلِمَةً أُخْرَى؟",
+  activityTitle:"اخْتَرْ كُلَّ مَا يَبْدَأُ بِصَوْتِ الدَّالِ",activity:[["🐔","دَجَاجَةٌ",1],["🧸","دُبٌّ",1],["🍋","لَيْمُونٌ",0],["⭐","نَجْمٌ",0]],
+  game:[["🐔","دَجَاجَةٌ"],["🧸","دُبٌّ"],["🏠","دَارٌ"]],
+  pages:[["أُسَمِّي وَأُلَاحِظُ","دَجَاجَةٌ • دُبٌّ • دَرَّاجَةٌ"],["أَقْرَأُ وَأُجَرِّدُ","دَ • دُ • دِ"],["مَوْقِعُ الْحَرْفِ","مَدْرَسَةٌ • وَلَدٌ • يَدٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","دَارٌ • دَرْسٌ • دَوَاءٌ"]],
+  quiz:["أَيْنَ حَرْفُ الدَّالِ؟",[["يَدٌ",1],["لَبَنٌ",0],["مَوْزٌ",0],["رِيشَةٌ",0]]]
+ },
+ "ن":{
+  name:"النُّونِ",desc:"نُصْغِي إِلَى صَوْتِ النُّونِ، وَنَكْتَشِفُ النُّقْطَةَ الَّتِي تَزَيِّنُهُ.",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَرَّفُ عَلَى حَرْفِ النُّونِ. رَدِّدُوا مَعِي: نْ... نْ... نْ. هَيَّا بِنَا.",
+  story:"جَلَسَتْ نُورَةُ تَرْسُمُ نَجْمَةً جَمِيلَةً. نَظَرَ يَاسِرٌ إِلَى الرَّسْمِ وَقَالَ: نَجْمَةٌ! ابْتَسَمَتِ الْأُمُّ مَرْيَمُ وَقَالَتْ: نَجْمَةٌ تَبْدَأُ بِحَرْفِ النُّونِ. هَلْ تَعْرِفُ كَلِمَةً أُخْرَى؟",
+  activityTitle:"سَاعِدْ نُورَةَ فِي جَمْعِ كَلِمَاتِ النُّونِ",activity:[["⭐","نَجْمٌ",1],["🌴","نَخْلَةٌ",1],["🐔","دَجَاجَةٌ",0],["🍌","مَوْزٌ",0]],
+  game:[["⭐","نَجْمٌ"],["🌴","نَخْلَةٌ"],["🐝","نَحْلَةٌ"]],
+  pages:[["أُسَمِّي وَأُلَاحِظُ","نَجْمٌ • نَخْلَةٌ • نَحْلَةٌ"],["أَقْرَأُ وَأُجَرِّدُ","نَـ • نُـ • نِـ"],["مَوْقِعُ الْحَرْفِ","عِنَبٌ • بِنْتٌ • لَوْنٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","نُورٌ • نَهْرٌ • نَافِذَةٌ"]],
+  quiz:["أَيُّ كَلِمَةٍ تَحْتَوِي عَلَى حَرْفِ النُّونِ؟",[["نَجْمٌ",1],["دُبٌّ",0],["رَمْلٌ",0],["بَابٌ",0]]]
+ },
+ "ر":{
+  name:"الرَّاءِ",desc:"نَخْتِمُ الْوَحْدَةَ مَعَ حَرْفِ الرَّاءِ، وَنُمَيِّزُ صَوْتَهُ الْوَاضِحَ فِي كَلِمَاتٍ جَدِيدَةٍ.",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَلَّمُ حَرْفَ الرَّاءِ. رَدِّدُوا مَعِي: رْ... رْ... رْ. هَيَّا نَبْدَأُ.",
+  story:"خَرَجَتِ الْأُسْرَةُ فِي رِحْلَةٍ، فَرَأَى يَاسِرٌ رُمَّانَةً حَمْرَاءَ. قَالَ الْجَدُّ مِشْعَلٌ: رُمَّانَةٌ تَبْدَأُ بِحَرْفِ الرَّاءِ. فَرِحَ الْجَمِيعُ وَرَدَّدُوا: رُمَّانٌ... رَاءٌ. هَلْ تَعْرِفُ كَلِمَةً أُخْرَى؟",
+  activityTitle:"اخْتَرِ الصُّوَرَ الَّتِي يَسْكُنُ فِيهَا صَوْتُ الرَّاءِ",activity:[["🪶","رِيشَةٌ",1],["🏖️","رَمْلٌ",1],["🌴","نَخْلَةٌ",0],["🧸","دُبٌّ",0]],
+  game:[["🪶","رِيشَةٌ"],["🏖️","رَمْلٌ"],["🍎","رُمَّانٌ"]],
+  pages:[["أُسَمِّي وَأُلَاحِظُ","رِيشَةٌ • رَمْلٌ • رُمَّانٌ"],["أَقْرَأُ وَأُجَرِّدُ","رَ • رُ • رِ"],["مَوْقِعُ الْحَرْفِ","فَرَسٌ • وَرْدَةٌ • قَمَرٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","رَأْسٌ • رَجُلٌ • رَسْمٌ"]],
+  quiz:["أَيُّ كَلِمَةٍ تَبْدَأُ بِحَرْفِ الرَّاءِ؟",[["رِيشَةٌ",1],["نَجْمٌ",0],["دَارٌ",0],["لَبَنٌ",0]]]
+ }
+};
+const panels=["intro","story","activity","game","book","quiz","badge"];
+let current="م",panelIndex=0,opened=[],matched=0;
+let progress=JSON.parse(localStorage.getItem("saadLettersProgress")||"{}");
+LETTER_ORDER.forEach(l=>{if(typeof progress[l]!=="boolean")progress[l]=false});
+
+const AUDIO={
+ welcome:{src:"assets/audio/welcome.webm",title:"ترحيب المعلم سعد"},
+ "م":{intro:{src:"assets/audio/meem/intro.webm",title:"مقدمة حرف الميم"},story:{src:"assets/audio/meem/story.webm",title:"قصة حرف الميم"},success:{src:"assets/audio/meem/success.webm",title:"تهنئة حرف الميم"}},
+ "ب":{intro:{src:"assets/audio/baa/intro.webm",title:"مقدمة حرف الباء"},story:{src:"assets/audio/baa/story.webm",title:"قصة حرف الباء"},success:{src:"assets/audio/baa/success.webm",title:"تهنئة حرف الباء"}},
+ "ل":{intro:{src:"assets/audio/laam/intro.webm",title:"مقدمة حرف اللام"},story:{src:"assets/audio/laam/story.webm",title:"قصة حرف اللام"},success:{src:"assets/audio/laam/success.webm",title:"تهنئة حرف اللام"}},
+ "د":{intro:{src:"assets/audio/daal/intro.webm",title:"مقدمة حرف الدال"},story:{src:"assets/audio/daal/story.webm",title:"قصة حرف الدال"},success:{src:"assets/audio/daal/success.webm",title:"تهنئة حرف الدال"}},
+ "ن":{intro:{src:"assets/audio/noon/intro.webm",title:"مقدمة حرف النون"},story:{src:"assets/audio/noon/story.webm",title:"قصة حرف النون"},success:{src:"assets/audio/noon/success.webm",title:"تهنئة حرف النون"}},
+ "ر":{intro:{src:"assets/audio/raa/intro.webm",title:"مقدمة حرف الراء"},story:{src:"assets/audio/raa/story.webm",title:"قصة حرف الراء"},success:{src:"assets/audio/raa/success.webm",title:"تهنئة حرف الراء"}}
+};
+let currentAudioKey="";
+function toggleMenu(){
+ const sidebar=document.getElementById("sidebar");
+ const isOpen=sidebar.classList.toggle("open");
+ document.body.classList.toggle("menu-open",isOpen);
+}
+function showScreen(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");document.getElementById("sidebar").classList.remove("open");document.body.classList.remove("menu-open");window.scrollTo(0,0);if(id==="badges")renderBadges()}
+function setSpeaking(on){document.getElementById("heroTeacher").classList.toggle("speaking",on);document.getElementById("heroTeacher").querySelector("img").classList.toggle("speaking",on);document.getElementById("miniTeacher").classList.toggle("speaking",on)}
+function audioEntry(key){return key==="welcome"?AUDIO.welcome:(AUDIO[current]&&AUDIO[current][key]);}
+function playTeacher(key){
+ const item=audioEntry(key);if(!item||!item.src){toast("لم يُربط هذا التسجيل بعد.");return}
+ const audio=document.getElementById("teacherAudio"),player=document.getElementById("audioPlayer");
+ currentAudioKey=(key==="welcome"?"welcome":current+":"+key);
+ if(audio.dataset.key!==currentAudioKey){audio.pause();audio.src=item.src;audio.dataset.key=currentAudioKey;audio.load()}
+ document.getElementById("audioTitle").textContent=item.title||"صوت المعلم سعد";
+ document.getElementById("audioStatus").textContent="جارٍ تحميل التسجيل…";
+ document.getElementById("audioToggleBtn").textContent="⏸ إيقاف مؤقت";player.classList.add("show");setSpeaking(true);
+ audio.play().then(()=>document.getElementById("audioStatus").textContent="يعمل الآن").catch(()=>{setSpeaking(false);player.classList.remove("show");toast("التسجيل غير موجود بعد. ضع ملف MP3 في المسار المحدد داخل مجلد assets/audio.")});
+ audio.onended=()=>{setSpeaking(false);document.getElementById("audioStatus").textContent="اكتمل التشغيل";document.getElementById("audioToggleBtn").textContent="▶ إعادة التشغيل"};
+ audio.onerror=()=>{setSpeaking(false);player.classList.remove("show");toast("تعذر تشغيل التسجيل. تأكد من اسم الملف ومساره.")};
+}
+function toggleAudio(){
+ const audio=document.getElementById("teacherAudio"),btn=document.getElementById("audioToggleBtn"),status=document.getElementById("audioStatus");
+ if(!audio.src)return;if(audio.paused){audio.play();btn.textContent="⏸ إيقاف مؤقت";status.textContent="يعمل الآن";setSpeaking(true)}else{audio.pause();btn.textContent="▶ متابعة";status.textContent="متوقف مؤقتًا";setSpeaking(false)}
+}
+function stopAudio(){const audio=document.getElementById("teacherAudio");audio.pause();audio.currentTime=0;setSpeaking(false);document.getElementById("audioPlayer").classList.remove("show")}
+function openLesson(letter){
+ current=letter;const d=DATA[letter];
+ document.querySelectorAll(".nav-item[data-letter]").forEach(b=>b.classList.toggle("active",b.dataset.letter===letter));
+ document.getElementById("lessonTitle").textContent="رِحْلَةُ حَرْفِ "+d.name;
+ document.getElementById("lessonDesc").textContent=d.desc;
+ document.getElementById("introText").textContent=d.intro;document.getElementById("storyText").textContent=d.story;
+ document.getElementById("activityTitle").textContent=d.activityTitle;document.getElementById("quizTitle").textContent="🏆 "+d.quiz[0];
+ document.getElementById("badgeLetter").textContent=letter;document.getElementById("teacherText").textContent="هَيَّا يَا بَطَلُ، لِنَبْدَأْ رِحْلَةَ حَرْفِ "+d.name+".";
+ renderActivity();renderPages();renderQuiz();setupGame();showScreen("lesson");showPanel("intro",false);
+}
+function renderSteps(){
+ const box=document.getElementById("lessonSteps");const labels=[["👋","المقدمة"],["📖","القصة"],["📋","النشاط"],["🎮","اللعبة"],["📚","الصفحات"],["🏆","التقويم"],["🎁","الوسام"]];
+ box.innerHTML=labels.map((x,i)=>`<button class="stage ${i===panelIndex?"active":""}" onclick="showPanel('${panels[i]}')"><span class="num">${i+1}</span><div class="emoji">${x[0]}</div><strong>${x[1]}</strong><div class="meter"><span style="width:${i<panelIndex?100:i===panelIndex?45:0}%"></span></div></button>`).join("");
+}
+function showPanel(name,doScroll=true){
+ panelIndex=panels.indexOf(name);
+ document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+ const activePanel=document.getElementById("panel-"+name);
+ activePanel.classList.add("active");
+ renderSteps();updateLessonNav();
+ if(doScroll){requestAnimationFrame(()=>activePanel.scrollIntoView({behavior:"smooth",block:"start"}))}
+}
+function nextPanel(){if(panelIndex<panels.length-1)showPanel(panels[panelIndex+1])}
+function prevPanel(){if(panelIndex>0)showPanel(panels[panelIndex-1])}
+function updateLessonNav(){
+ const labels=["المقدمة","القصة","النشاط","اللعبة","الصفحات","التقويم","الوسام"];
+ const prev=document.getElementById("prevStageBtn"),next=document.getElementById("nextStageBtn"),status=document.getElementById("stageStatus");
+ if(!prev||!next)return;
+ prev.disabled=panelIndex===0;next.disabled=panelIndex===panels.length-1;
+ prev.textContent=panelIndex===0?"→ السَّابِقُ":"→ "+labels[panelIndex-1];
+ next.textContent=panelIndex===panels.length-1?"اكتملت الرحلة":""+labels[panelIndex+1]+" ←";
+ status.textContent="المرحلة "+(panelIndex+1)+" من "+panels.length+": "+labels[panelIndex];
+}
+function renderActivity(){
+ const box=document.getElementById("activityGrid");box.innerHTML="";
+ DATA[current].activity.forEach(x=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<span class="pic">${x[0]}</span>${x[1]}`;b.onclick=()=>{if(x[2]){b.classList.add("correct");sayFeedback(true)}else{b.classList.add("wrong");sayFeedback(false)}};box.appendChild(b)});
+ document.getElementById("activityFeedback").className="feedback";
+}
+function sayFeedback(ok){
+ const f=document.getElementById("activityFeedback");f.textContent=ok?"أَحْسَنْتَ يَا بَطَلُ! اخْتِيَارٌ صَحِيحٌ.":"لَا بَأْسَ، اِسْتَمِعْ إِلَى أَوَّلِ صَوْتٍ فِي الْكَلِمَةِ وَحَاوِلْ مَرَّةً أُخْرَى.";
+ f.className="feedback show "+(ok?"good":"bad");document.getElementById("teacherText").textContent=f.textContent;
+}
+function setupGame(){
+ opened=[];matched=0;const board=document.getElementById("gameBoard");board.innerHTML="";
+ let cards=[];DATA[current].game.forEach((x,i)=>{cards.push({id:i,v:x[0]});cards.push({id:i,v:x[1]})});cards.sort(()=>Math.random()-.5);
+ cards.forEach(c=>{const b=document.createElement("button");b.className="mem";b.textContent=c.v;b.dataset.id=c.id;b.onclick=()=>flip(b);board.appendChild(b)});
+ document.getElementById("gameFeedback").className="feedback";
+}
+function flip(b){
+ if(b.classList.contains("open")||b.classList.contains("matched")||opened.length===2)return;b.classList.add("open");opened.push(b);
+ if(opened.length===2){const[a,c]=opened;if(a.dataset.id===c.dataset.id){setTimeout(()=>{a.className="mem matched";c.className="mem matched";opened=[];matched++;if(matched===DATA[current].game.length){const f=document.getElementById("gameFeedback");f.textContent="رَائِعٌ! أَكْمَلْتَ اللُّعْبَةَ بِنَجَاحٍ.";f.className="feedback show good";document.getElementById("teacherText").textContent=f.textContent}},300)}else setTimeout(()=>{a.classList.remove("open");c.classList.remove("open");opened=[]},650)}
+}
+function renderPages(){
+ document.getElementById("bookGrid").innerHTML=DATA[current].pages.map(p=>`<article class="book-page"><div class="big-letter">${current}</div><h3>${p[0]}</h3><div class="pills">${p[1].split(" • ").map(w=>`<span class="pill">${w}</span>`).join("")}</div></article>`).join("");
+}
+function renderQuiz(){
+ const box=document.getElementById("quizGrid");box.innerHTML="";document.getElementById("quizFeedback").className="feedback";
+ DATA[current].quiz[1].forEach(x=>{const b=document.createElement("button");b.className="choice";b.textContent=x[0];b.onclick=()=>checkQuiz(b,x[1]);box.appendChild(b)})
+}
+function checkQuiz(btn,ok){
+ const f=document.getElementById("quizFeedback");
+ if(ok){btn.classList.add("correct");f.textContent="مُمْتَازٌ يَا بَطَلُ! حَصَلْتَ عَلَى وَسَامِ حَرْفِ "+current+".";f.className="feedback show good";progress[current]=true;localStorage.setItem("saadLettersProgress",JSON.stringify(progress));document.getElementById("teacherText").textContent=f.textContent;setTimeout(()=>showPanel("badge"),700)}
+ else{btn.classList.add("wrong");f.textContent="لَا بَأْسَ. حَاوِلْ مَرَّةً أُخْرَى، وَرَكِّزْ فِي صَوْتِ الْحَرْفِ.";f.className="feedback show bad";document.getElementById("teacherText").textContent=f.textContent}
+}
+function openNext(){
+ const i=LETTER_ORDER.indexOf(current);
+ if(i<LETTER_ORDER.length-1){openLesson(LETTER_ORDER[i+1]);return}
+ showScreen("badges");
+ setTimeout(()=>{if(LETTER_ORDER.every(l=>progress[l]))celebrateUnit()},250);
+}
+function renderBadges(){
+ const complete=LETTER_ORDER.filter(l=>progress[l]).length;
+ document.getElementById("badgeList").innerHTML=LETTER_ORDER.map(l=>`<div class="card" style="text-align:center;opacity:${progress[l]?1:.55}"><div style="font-size:70px">${progress[l]?"🏅":"🔒"}</div><h2>وِسَامُ حَرْفِ ${l}</h2><p>${progress[l]?"تَمَّ الْإِنْجَازُ بِنَجَاحٍ":"أَكْمِلِ التَّقْوِيمَ لِفَتْحِ الْوِسَامِ"}</p></div>`).join("");
+ const host=document.querySelector("#badges .badge-banner");
+ let unit=document.getElementById("unitAchievement");
+ if(!unit){unit=document.createElement("div");unit.id="unitAchievement";host.appendChild(unit)}
+ unit.innerHTML=`<div class="audio-note" style="margin-top:24px;font-size:18px">أَنْجَزْتَ ${complete} مِنْ 6 رِحْلَاتٍ.</div>`+(complete===6?`<div class="card" style="margin-top:18px;background:linear-gradient(135deg,#fff5c8,#e7fff5)"><div style="font-size:86px">🏆✨</div><h1>مُبَارَكٌ يَا بَطَلُ الْحُرُوفِ!</h1><p style="font-size:20px">أَكْمَلْتَ الْوَحْدَةَ الْأُولَى: م، ب، ل، د، ن، ر.</p><button class="success" onclick="celebrateUnit()">أَعِدِ الِاحْتِفَالَ 🎉</button></div>`:"");
+}
+function celebrateUnit(){
+ document.body.classList.add("unit-party");
+ document.getElementById("teacherText").textContent="مُبَارَكٌ يَا بَطَلُ! أَكْمَلْتَ حُرُوفَ الْوَحْدَةِ الْأُولَى بِنَجَاحٍ.";
+ toast("🏆 أَكْمَلْتَ الْوَحْدَةَ الْأُولَى!");
+ for(let i=0;i<36;i++){const s=document.createElement("i");s.className="confetti";s.textContent=["✨","⭐","🎉","🏅"][i%4];s.style.left=(Math.random()*100)+"vw";s.style.animationDelay=(Math.random()*.8)+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),3200)}
+ setTimeout(()=>document.body.classList.remove("unit-party"),2000);
+}
+function toast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2800)}
+openLesson("م");showScreen("home");
+</script>
+
+<script>
+// الإصدار 2.0.3: افتح المنصة دائمًا من أعلى الهوية البصرية كاملة.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('pageshow', function(){ window.scrollTo({top:0,left:0,behavior:'auto'}); });
+window.addEventListener('load', function(){ setTimeout(function(){ window.scrollTo(0,0); }, 0); });
+</script>
+</body>
+</html>
