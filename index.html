@@ -354,6 +354,9 @@ button{touch-action:manipulation;min-height:44px}
 @media(max-width:900px){.home-dashboard{grid-template-columns:1fr}.letter-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){.letters-board,.progress-board{padding:15px;border-radius:22px}.letter-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.letter-card{padding:13px 7px}.letter-card .letter{width:60px;height:60px;font-size:40px;border-radius:19px}.section-head{align-items:flex-start;flex-direction:column}.progress-ring{width:130px;height:130px}}
 
+
+.stage.done{background:linear-gradient(135deg,#e9fff2,#d7f7e6);border-color:#47b881}.stage.done .num{background:#1f9d68;color:#fff}.stage.done strong::after{content:" ✓";color:#16845a}.stage.locked{opacity:.58;filter:grayscale(.18)}
+.stage-goal{display:flex;align-items:center;gap:10px;background:#f2f8ff;border:1px solid #cfe4ff;border-radius:16px;padding:11px 14px;margin:0 0 16px;font-weight:900;color:#22577a}.stage-goal span{font-size:22px}.audio-ready{margin-top:12px;font-size:14px;color:#5c677d}.panel-complete{display:none;margin-top:14px;padding:10px 14px;border-radius:14px;background:#e9fff2;color:#147a52;font-weight:950}.panel-complete.show{display:block}
 </style>
 </head>
 <body>
@@ -433,26 +436,26 @@ button{touch-action:manipulation;min-height:44px}
    <div class="lesson-title"><h2 id="lessonTitle">رحلة حرف الميم</h2><p id="lessonDesc"></p></div>
    <div class="journey" id="lessonSteps"></div>
    <div id="panel-intro" class="panel active card">
-    <h3>👋 مُقَدِّمَةُ الْحَرْفِ</h3><p id="introText"></p>
+    <h3>👋 مُقَدِّمَةُ الْحَرْفِ</h3><div class="stage-goal"><span>🎯</span>اسْتَمِعْ إِلَى صَوْتِ الْحَرْفِ، ثُمَّ رَدِّدْهُ مَعَ الْمُعَلِّمِ.</div><p id="introText"></p><div class="panel-complete" id="complete-intro">✓ أَتْمَمْتَ الْمُقَدِّمَةَ.</div>
     <div class="actions"><button class="primary" onclick="playTeacher('intro')">🔊 اسْتَمِعْ إِلَى الْمُعَلِّمِ سَعْدٍ</button><button class="secondary" onclick="nextPanel()">التَّالِي: قِصَّةُ الْحَرْفِ ←</button></div>
    </div>
    <div id="panel-story" class="panel card">
-    <h3>📖 قِصَّةُ الْحَرْفِ</h3><p id="storyText"></p>
+    <h3>📖 قِصَّةُ الْحَرْفِ</h3><div class="stage-goal"><span>👂</span>اسْتَمِعْ إِلَى الْقِصَّةِ وَابْحَثْ عَنْ كَلِمَاتِ الْحَرْفِ.</div><p id="storyText"></p><div class="panel-complete" id="complete-story">✓ أَتْمَمْتَ الْقِصَّةَ.</div>
     <div class="actions"><button class="primary" onclick="playTeacher('story')">🔊 اسْتَمِعْ إِلَى الْقِصَّةِ</button><button class="secondary" onclick="nextPanel()">التَّالِي: النَّشَاطُ ←</button></div>
    </div>
    <div id="panel-activity" class="panel card">
-    <h3 id="activityTitle">📋 نَشَاطٌ تَفَاعُلِيٌّ</h3><div class="choice-grid" id="activityGrid"></div><div class="feedback" id="activityFeedback"></div>
+    <h3 id="activityTitle">📋 نَشَاطٌ تَفَاعُلِيٌّ</h3><div class="stage-goal"><span>👆</span>اخْتَرْ جَمِيعَ الْكَلِمَاتِ الصَّحِيحَةِ.</div><div class="choice-grid" id="activityGrid"></div><div class="feedback" id="activityFeedback"></div><div class="panel-complete" id="complete-activity">✓ أَتْمَمْتَ النَّشَاطَ.</div>
     <div class="actions"><button class="secondary" onclick="renderActivity()">إِعَادَةُ النَّشَاطِ</button><button class="primary" onclick="nextPanel()">التَّالِي: اللُّعْبَةُ ←</button></div>
    </div>
    <div id="panel-game" class="panel card">
-    <h3>🎮 لُعْبَةُ الذَّاكِرَةِ</h3><p>اِفْتَحْ بَطَاقَتَيْنِ مُتَشَابِهَتَيْنِ، وَاجْمَعِ الْأَزْوَاجَ الصَّحِيحَةَ.</p><div class="game" id="gameBoard"></div><div class="feedback" id="gameFeedback"></div>
+    <h3>🎮 لُعْبَةُ الذَّاكِرَةِ</h3><div class="stage-goal"><span>🧠</span>طَابِقْ بَيْنَ الصُّورَةِ وَالْكَلِمَةِ.</div><p>اِفْتَحْ بَطَاقَتَيْنِ مُتَشَابِهَتَيْنِ، وَاجْمَعِ الْأَزْوَاجَ الصَّحِيحَةَ.</p><div class="game" id="gameBoard"></div><div class="feedback" id="gameFeedback"></div><div class="panel-complete" id="complete-game">✓ أَتْمَمْتَ اللُّعْبَةَ.</div>
     <div class="actions"><button class="secondary" onclick="setupGame()">لُعْبَةٌ جَدِيدَةٌ</button><button class="primary" onclick="nextPanel()">التَّالِي: صَفَحَاتُ الدَّرْسِ ←</button></div>
    </div>
    <div id="panel-book" class="panel card">
-    <h3>📚 صَفَحَاتُ الدَّرْسِ</h3><div class="book-grid" id="bookGrid"></div><div class="actions"><button class="primary" onclick="nextPanel()">التَّالِي: التَّقْوِيمُ ←</button></div>
+    <h3>📚 صَفَحَاتُ الدَّرْسِ</h3><div class="stage-goal"><span>🔎</span>لَاحِظْ شَكْلَ الْحَرْفِ وَمَوْقِعَهُ فِي الْكَلِمَةِ.</div><div class="book-grid" id="bookGrid"></div><div class="panel-complete" id="complete-book">✓ أَتْمَمْتَ صَفَحَاتِ الدَّرْسِ.</div><div class="actions"><button class="primary" onclick="nextPanel()">التَّالِي: التَّقْوِيمُ ←</button></div>
    </div>
    <div id="panel-quiz" class="panel card">
-    <h3 id="quizTitle">🏆 التَّقْوِيمُ</h3><div class="choice-grid" id="quizGrid"></div><div class="feedback" id="quizFeedback"></div>
+    <h3 id="quizTitle">🏆 التَّقْوِيمُ</h3><div class="stage-goal"><span>✅</span>اخْتَرِ الْإِجَابَةَ الصَّحِيحَةَ لِتَفْتَحَ الْوِسَامَ.</div><div class="choice-grid" id="quizGrid"></div><div class="feedback" id="quizFeedback"></div><div class="panel-complete" id="complete-quiz">✓ اجْتَزْتَ التَّقْوِيمَ.</div>
    </div>
    <div id="panel-badge" class="panel card badge-banner">
     <h3>🎁 وَسَامُ الْإِنْجَازِ</h3><div class="badge" id="badgeLetter">م</div><h2 id="badgeMsg">أَحْسَنْتَ يَا بَطَلُ!</h2>
@@ -487,8 +490,9 @@ const LETTER_ORDER=["م","ب","ل","د","ن","ر"];
 const DATA={
  "م":{
   name:"الْمِيمِ",desc:"نَتَعَرَّفُ عَلَى حَرْفِ الْمِيمِ، وَنَسْمَعُهُ فِي الْكَلِمَاتِ، ثُمَّ نَلْعَبُ وَنُنْجِزُ.",
-  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَرَّفُ عَلَى حَرْفِ الْمِيمِ. رَدِّدُوا مَعِي: مْ... مْ... مْ. هَيَّا نَبْدَأُ رِحْلَتَنَا.",
-  story:"اجْتَمَعَتِ الْأُسْرَةُ عَلَى الْإِفْطَارِ. وَضَعَتِ الْأُمُّ مَرْيَمُ طَبَقًا مِنَ الْمَوْزِ عَلَى الْمَائِدَةِ، فَاخْتَارَ يَاسِرٌ مَوْزَةً وَهُوَ يَبْتَسِمُ. قَالَ الْأَبُ سَعْدٌ: مَرْيَمُ، وَمَائِدَةٌ، وَمَوْزٌ؛ كُلُّهَا تَبْدَأُ بِصَوْتِ الْمِيمِ. هَلْ تَذْكُرُ كَلِمَةً أُخْرَى؟",
+  intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ نَتَعَلَّمُ حَرْفَ الْمِيمِ. رَدِّدُوا مَعِي: مْ... مْ... مْ. هَيَّا نَبْدَأُ.",
+  story:"اجْتَمَعَتِ الْأُسْرَةُ عَلَى الْإِفْطَارِ. وَضَعَتِ الْأُمُّ مَرْيَمُ الْمَوْزَ عَلَى الْمَائِدَةِ، فَاخْتَارَ يَاسِرٌ مَوْزَةً. قَالَ الْأَبُ سَعْدٌ: مَرْيَمُ، وَمَائِدَةٌ، وَمَوْزٌ؛ كُلُّهَا تَبْدَأُ بِحَرْفِ الْمِيمِ. هَلْ تَذْكُرُ كَلِمَةً أُخْرَى؟",
+  success:"أَحْسَنْتَ يَا بَطَلُ! تَعَرَّفْتَ عَلَى حَرْفِ الْمِيمِ، وَأَتْمَمْتَ رِحْلَتَهُ بِنَجَاحٍ. أَنَا فَخُورٌ بِكَ.",
   activityTitle:"اخْتَرِ الصُّوَرَ الَّتِي تَبْدَأُ بِحَرْفِ الْمِيمِ",activity:[["🍌","مَوْزٌ",1],["🏫","مَدْرَسَةٌ",1],["🚪","بَابٌ",0],["🦆","بَطَّةٌ",0]],
   game:[["🍌","مَوْزٌ"],["🏫","مَدْرَسَةٌ"],["🌙","قَمَرٌ"]],
   pages:[["أُسَمِّي وَأُلَاحِظُ","مَوْزٌ • مَدْرَسَةٌ • مَاءٌ"],["أَقْرَأُ وَأُجَرِّدُ","مَـ • مُـ • مِـ"],["مَوْقِعُ الْحَرْفِ","قَمَرٌ • سَمَكٌ • عَلَمٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","مَنْزِلٌ • مِلْعَقَةٌ • قَمَرٌ"]],
@@ -541,6 +545,8 @@ const DATA={
  }
 };
 const panels=["intro","story","activity","game","book","quiz","badge"];
+let stageProgress=JSON.parse(localStorage.getItem("saadStageProgress")||"{}");
+let activityCorrect=new Set();
 let current="م",panelIndex=0,opened=[],matched=0;
 let progress=JSON.parse(localStorage.getItem("saadLettersProgress")||"{}");
 LETTER_ORDER.forEach(l=>{if(typeof progress[l]!=="boolean")progress[l]=false});
@@ -589,12 +595,25 @@ function openLesson(letter){
  document.getElementById("lessonDesc").textContent=d.desc;
  document.getElementById("introText").textContent=d.intro;document.getElementById("storyText").textContent=d.story;
  document.getElementById("activityTitle").textContent=d.activityTitle;document.getElementById("quizTitle").textContent="🏆 "+d.quiz[0];
- document.getElementById("badgeLetter").textContent=letter;document.getElementById("teacherText").textContent="هَيَّا يَا بَطَلُ، لِنَبْدَأْ رِحْلَةَ حَرْفِ "+d.name+".";
+ document.getElementById("badgeLetter").textContent=letter;document.getElementById("badgeMsg").textContent=d.success||("أَحْسَنْتَ! أَتْمَمْتَ حَرْفَ "+d.name+".");document.getElementById("teacherText").textContent="هَيَّا يَا بَطَلُ، لِنَبْدَأْ رِحْلَةَ حَرْفِ "+d.name+".";
  renderActivity();renderPages();renderQuiz();setupGame();showScreen("lesson");showPanel("intro",false);
+}
+function getStageState(){
+ if(!stageProgress[current])stageProgress[current]={};
+ return stageProgress[current];
+}
+function saveStageState(){localStorage.setItem("saadStageProgress",JSON.stringify(stageProgress))}
+function completeStage(name){
+ const state=getStageState();state[name]=true;saveStageState();
+ const note=document.getElementById("complete-"+name);if(note)note.classList.add("show");
+ renderSteps();
 }
 function renderSteps(){
  const box=document.getElementById("lessonSteps");const labels=[["👋","المقدمة"],["📖","القصة"],["📋","النشاط"],["🎮","اللعبة"],["📚","الصفحات"],["🏆","التقويم"],["🎁","الوسام"]];
- box.innerHTML=labels.map((x,i)=>`<button class="stage ${i===panelIndex?"active":""}" onclick="showPanel('${panels[i]}')"><span class="num">${i+1}</span><div class="emoji">${x[0]}</div><strong>${x[1]}</strong><div class="meter"><span style="width:${i<panelIndex?100:i===panelIndex?45:0}%"></span></div></button>`).join("");
+ const state=getStageState();
+ box.innerHTML=labels.map((x,i)=>{const done=!!state[panels[i]]||progress[current]&&i===6;return `<button class="stage ${i===panelIndex?"active":""} ${done?"done":""}" onclick="showPanel('${panels[i]}')"><span class="num">${done?"✓":i+1}</span><div class="emoji">${x[0]}</div><strong>${x[1]}</strong><div class="meter"><span style="width:${done?100:i===panelIndex?45:0}%"></span></div></button>`}).join("");
+ document.querySelectorAll(".panel-complete").forEach(n=>n.classList.remove("show"));
+ Object.keys(state).forEach(k=>{const n=document.getElementById("complete-"+k);if(n)n.classList.add("show")});
 }
 function showPanel(name,doScroll=true){
  panelIndex=panels.indexOf(name);lastStage=panelIndex;localStorage.setItem("saadLastStage",String(panelIndex));
@@ -604,7 +623,7 @@ function showPanel(name,doScroll=true){
  renderSteps();updateLessonNav();
  if(doScroll){requestAnimationFrame(()=>activePanel.scrollIntoView({behavior:"smooth",block:"start"}))}
 }
-function nextPanel(){if(panelIndex<panels.length-1)showPanel(panels[panelIndex+1])}
+function nextPanel(){if(panelIndex<panels.length-1){completeStage(panels[panelIndex]);showPanel(panels[panelIndex+1])}}
 function prevPanel(){if(panelIndex>0)showPanel(panels[panelIndex-1])}
 function updateLessonNav(){
  const labels=["المقدمة","القصة","النشاط","اللعبة","الصفحات","التقويم","الوسام"];
@@ -616,8 +635,8 @@ function updateLessonNav(){
  status.textContent="المرحلة "+(panelIndex+1)+" من "+panels.length+": "+labels[panelIndex];
 }
 function renderActivity(){
- const box=document.getElementById("activityGrid");box.innerHTML="";
- DATA[current].activity.forEach(x=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<span class="pic">${x[0]}</span>${x[1]}`;b.onclick=()=>{if(x[2]){b.classList.add("correct");sayFeedback(true)}else{b.classList.add("wrong");sayFeedback(false)}};box.appendChild(b)});
+ activityCorrect=new Set();const box=document.getElementById("activityGrid");box.innerHTML="";
+ DATA[current].activity.forEach(x=>{const b=document.createElement("button");b.className="choice";b.innerHTML=`<span class="pic">${x[0]}</span>${x[1]}`;b.onclick=()=>{if(x[2]){b.classList.add("correct");activityCorrect.add(x[1]);sayFeedback(true);const needed=DATA[current].activity.filter(v=>v[2]).length;if(activityCorrect.size>=needed)completeStage("activity")}else{b.classList.add("wrong");sayFeedback(false)}};box.appendChild(b)});
  document.getElementById("activityFeedback").className="feedback";
 }
 function sayFeedback(ok){
@@ -631,8 +650,22 @@ function setupGame(){
  document.getElementById("gameFeedback").className="feedback";
 }
 function flip(b){
- if(b.classList.contains("open")||b.classList.contains("matched")||opened.length===2)return;b.classList.add("open");opened.push(b);
- if(opened.length===2){const[a,c]=opened;if(a.dataset.id===c.dataset.id){setTimeout(()=>{a.className="mem matched";c.className="mem matched";opened=[];matched++;if(matched===DATA[current].game.length){const f=document.getElementById("gameFeedback");f.textContent="رَائِعٌ! أَكْمَلْتَ اللُّعْبَةَ بِنَجَاحٍ.";f.className="feedback show good";document.getElementById("teacherText").textContent=f.textContent}},300)}else setTimeout(()=>{a.classList.remove("open");c.classList.remove("open");opened=[]},650)}
+ if(b.classList.contains("open")||b.classList.contains("matched")||opened.length===2)return;
+ b.classList.add("open");opened.push(b);
+ if(opened.length===2){
+  const[a,c]=opened;
+  if(a.dataset.id===c.dataset.id){
+   setTimeout(()=>{
+    a.className="mem matched";c.className="mem matched";opened=[];matched++;
+    if(matched===DATA[current].game.length){
+     const f=document.getElementById("gameFeedback");f.textContent="رَائِعٌ! أَكْمَلْتَ اللُّعْبَةَ بِنَجَاحٍ.";f.className="feedback show good";
+     document.getElementById("teacherText").textContent=f.textContent;completeStage("game");
+    }
+   },300);
+  }else{
+   setTimeout(()=>{a.classList.remove("open");c.classList.remove("open");opened=[]},650);
+  }
+ }
 }
 function renderPages(){
  document.getElementById("bookGrid").innerHTML=DATA[current].pages.map(p=>`<article class="book-page"><div class="big-letter">${current}</div><h3>${p[0]}</h3><div class="pills">${p[1].split(" • ").map(w=>`<span class="pill">${w}</span>`).join("")}</div></article>`).join("");
@@ -643,7 +676,7 @@ function renderQuiz(){
 }
 function checkQuiz(btn,ok){
  const f=document.getElementById("quizFeedback");
- if(ok){btn.classList.add("correct");f.textContent="مُمْتَازٌ يَا بَطَلُ! حَصَلْتَ عَلَى وَسَامِ حَرْفِ "+current+".";f.className="feedback show good";progress[current]=true;localStorage.setItem("saadLettersProgress",JSON.stringify(progress));document.getElementById("teacherText").textContent=f.textContent;renderHome();setTimeout(()=>{showPanel("badge");playTeacher("success")},700)}
+ if(ok){btn.classList.add("correct");f.textContent="مُمْتَازٌ يَا بَطَلُ! حَصَلْتَ عَلَى وَسَامِ حَرْفِ "+current+".";f.className="feedback show good";progress[current]=true;completeStage("quiz");completeStage("badge");localStorage.setItem("saadLettersProgress",JSON.stringify(progress));document.getElementById("teacherText").textContent=f.textContent;renderHome();setTimeout(()=>{showPanel("badge");playTeacher("success")},700)}
  else{btn.classList.add("wrong");f.textContent="لَا بَأْسَ. حَاوِلْ مَرَّةً أُخْرَى، وَرَكِّزْ فِي صَوْتِ الْحَرْفِ.";f.className="feedback show bad";document.getElementById("teacherText").textContent=f.textContent}
 }
 function openNext(){
@@ -686,11 +719,15 @@ function celebrateUnit(){
  setTimeout(()=>document.body.classList.remove("unit-party"),2000);
 }
 function toast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2800)}
+
+const teacherAudioEl=document.getElementById("teacherAudio");
+teacherAudioEl.addEventListener("ended",()=>{if(panelIndex===0)completeStage("intro");if(panelIndex===1)completeStage("story")});
+
 openLesson("م");renderHome();showScreen("home");
 </script>
 
 <script>
-// الإصدار 2.0.3: افتح المنصة دائمًا من أعلى الهوية البصرية كاملة.
+// الإصدار 2.1.1: افتح المنصة دائمًا من أعلى الهوية البصرية كاملة.
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.addEventListener('pageshow', function(){ window.scrollTo({top:0,left:0,behavior:'auto'}); });
 window.addEventListener('load', function(){ setTimeout(function(){ window.scrollTo(0,0); }, 0); });
