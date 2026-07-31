@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#165b44">
 <title>رحلة الحروف مع المعلم سعد</title>
-<meta name="app-version" content="2.0.3">
+<meta name="app-version" content="2.1.0">
 <style>
 :root{
  --bg:#f5f7f6;--paper:#fff;--ink:#17324d;--muted:#6c7b88;--green:#15845c;--green2:#20a36f;
@@ -329,6 +329,31 @@ button{touch-action:manipulation;min-height:44px}
 .teacher-mini .mini-bubble{margin:0 0 16px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px 20px;box-shadow:var(--shadow);font-weight:900;color:var(--ink)}
 .teacher-panel,.teacher-img,.teacher-mini img{display:none!important}
 @media(max-width:900px){.welcome-panel{min-height:auto}.teacher-mini{display:block}}
+
+
+/* الإصدار 2.1: لوحة رحلة الطفل وبطاقات الحروف */
+.home-dashboard{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(260px,.8fr);gap:18px;margin-top:18px}
+.letters-board,.progress-board{background:#fff;border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.section-head h2{margin:0;font-size:clamp(24px,3vw,34px)}
+.section-head p{margin:3px 0 0;color:var(--muted);font-weight:800}
+.letter-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.letter-card{position:relative;border:1px solid var(--line);border-radius:22px;padding:18px 12px;background:linear-gradient(145deg,#fff,#f7fbff);text-align:center;box-shadow:0 8px 20px rgba(23,50,77,.07);transition:.22s;overflow:hidden}
+.letter-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(23,50,77,.13)}
+.letter-card.completed{background:linear-gradient(145deg,#effcf5,#fff);border-color:#82d0b0}
+.letter-card .letter{display:grid;place-items:center;width:74px;height:74px;border-radius:24px;margin:0 auto 9px;background:#eef5ff;color:#165fc1;font-size:48px;font-weight:950}
+.letter-card.completed .letter{background:#dff7ea;color:#0b754d}
+.letter-card strong{display:block;font-size:20px}.letter-card small{display:block;color:var(--muted);font-weight:800;margin-top:4px}
+.letter-card .stars{margin-top:10px;font-size:18px;letter-spacing:2px}.letter-card .check{position:absolute;top:10px;left:10px;font-size:22px}
+.progress-ring{--pct:0;width:150px;height:150px;border-radius:50%;margin:10px auto 18px;display:grid;place-items:center;background:conic-gradient(var(--green2) calc(var(--pct)*1%),#e8efeb 0);position:relative}
+.progress-ring:before{content:"";position:absolute;inset:13px;border-radius:50%;background:#fff}
+.progress-ring span{position:relative;font-size:31px;font-weight:950;color:var(--green)}
+.stat-list{display:grid;gap:10px}.stat-row{display:flex;align-items:center;justify-content:space-between;background:#f7faf8;border-radius:16px;padding:12px 14px;font-weight:900}.stat-row b{color:var(--green);font-size:20px}
+.resume-box{margin-top:13px;background:linear-gradient(135deg,#eef5ff,#f4fff9);border-radius:18px;padding:14px}.resume-box strong{display:block;margin-bottom:8px}.resume-box button{width:100%}
+.stage-complete-note{display:flex;align-items:center;gap:10px;background:#eafaf2;border:1px solid #a8ddc6;color:#0d704b;padding:12px 14px;border-radius:17px;margin-top:14px;font-weight:900}
+@media(max-width:900px){.home-dashboard{grid-template-columns:1fr}.letter-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.letters-board,.progress-board{padding:15px;border-radius:22px}.letter-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.letter-card{padding:13px 7px}.letter-card .letter{width:60px;height:60px;font-size:40px;border-radius:19px}.section-head{align-items:flex-start;flex-direction:column}.progress-ring{width:130px;height:130px}}
+
 </style>
 </head>
 <body>
@@ -372,7 +397,23 @@ button{touch-action:manipulation;min-height:44px}
    <div class="audio-note">أُعِدَّتْ أزرار الصوت لتشغيل تسجيلات رجالية ثابتة، وقد أُلغي صوت المتصفح الآلي تمامًا.<br><span class="audio-ready">🎙️ البنية الصوتية جاهزة لملفات MP3</span></div>
   </div>
  </div>
- <div class="journey">
+ <section class="home-dashboard" aria-label="لوحة رحلة الطفل">
+  <div class="letters-board">
+   <div class="section-head"><div><h2>اخْتَرْ حَرْفًا لِبَدْءِ الرِّحْلَةِ ⭐</h2><p>اسْتَمِعْ، وَاقْرَأْ، وَالْعَبْ، ثُمَّ اجْمَعِ الْوِسَامَ.</p></div></div>
+   <div class="letter-cards" id="homeLetterCards"></div>
+  </div>
+  <aside class="progress-board">
+   <div class="section-head"><div><h2>إِنْجَازِي</h2><p>تَقَدُّمِي فِي حُرُوفِ الْوَحْدَةِ</p></div></div>
+   <div class="progress-ring" id="progressRing"><span id="progressPercent">0%</span></div>
+   <div class="stat-list">
+    <div class="stat-row"><span>🏅 الحروف المكتملة</span><b id="completedCount">0</b></div>
+    <div class="stat-row"><span>⭐ النجوم المكتسبة</span><b id="starsCount">0</b></div>
+    <div class="stat-row"><span>📚 المتبقي</span><b id="remainingCount">6</b></div>
+   </div>
+   <div class="resume-box" id="resumeBox"></div>
+  </aside>
+ </section>
+ <div class="journey" aria-label="مراحل رحلة الحرف">
   <div class="stage active"><span class="num">1</span><div class="emoji">👋</div><strong>المقدمة</strong><div class="meter"><span></span></div></div>
   <div class="stage"><span class="num">2</span><div class="emoji">📖</div><strong>قصة الحرف</strong><div class="meter"><span></span></div></div>
   <div class="stage"><span class="num">3</span><div class="emoji">📋</div><strong>نشاط تفاعلي</strong><div class="meter"><span></span></div></div>
@@ -447,7 +488,7 @@ const DATA={
  "م":{
   name:"الْمِيمِ",desc:"نَتَعَرَّفُ عَلَى حَرْفِ الْمِيمِ، وَنَسْمَعُهُ فِي الْكَلِمَاتِ، ثُمَّ نَلْعَبُ وَنُنْجِزُ.",
   intro:"السَّلَامُ عَلَيْكُمْ يَا أَبْطَالُ. الْيَوْمَ سَنَتَعَرَّفُ عَلَى حَرْفِ الْمِيمِ. رَدِّدُوا مَعِي: مْ... مْ... مْ. هَيَّا نَبْدَأُ رِحْلَتَنَا.",
-  story:"جَلَسَتِ الْأُسْرَةُ لِتَنَاوُلِ الْإِفْطَارِ. وَضَعَتِ الْأُمُّ مَرْيَمُ طَبَقًا مِنَ الْمَوْزِ، فَأَخَذَ يَاسِرٌ مَوْزَةً وَهُوَ يَبْتَسِمُ. قَالَ الْأَبُ سَعْدٌ: مَوْزٌ تَبْدَأُ بِحَرْفِ الْمِيمِ. هَلْ تَعْرِفُ كَلِمَةً أُخْرَى؟",
+  story:"اجْتَمَعَتِ الْأُسْرَةُ عَلَى الْإِفْطَارِ. وَضَعَتِ الْأُمُّ مَرْيَمُ طَبَقًا مِنَ الْمَوْزِ عَلَى الْمَائِدَةِ، فَاخْتَارَ يَاسِرٌ مَوْزَةً وَهُوَ يَبْتَسِمُ. قَالَ الْأَبُ سَعْدٌ: مَرْيَمُ، وَمَائِدَةٌ، وَمَوْزٌ؛ كُلُّهَا تَبْدَأُ بِصَوْتِ الْمِيمِ. هَلْ تَذْكُرُ كَلِمَةً أُخْرَى؟",
   activityTitle:"اخْتَرِ الصُّوَرَ الَّتِي تَبْدَأُ بِحَرْفِ الْمِيمِ",activity:[["🍌","مَوْزٌ",1],["🏫","مَدْرَسَةٌ",1],["🚪","بَابٌ",0],["🦆","بَطَّةٌ",0]],
   game:[["🍌","مَوْزٌ"],["🏫","مَدْرَسَةٌ"],["🌙","قَمَرٌ"]],
   pages:[["أُسَمِّي وَأُلَاحِظُ","مَوْزٌ • مَدْرَسَةٌ • مَاءٌ"],["أَقْرَأُ وَأُجَرِّدُ","مَـ • مُـ • مِـ"],["مَوْقِعُ الْحَرْفِ","قَمَرٌ • سَمَكٌ • عَلَمٌ"],["أَسْتَخْدِمُ الْكَلِمَةَ","مَنْزِلٌ • مِلْعَقَةٌ • قَمَرٌ"]],
@@ -503,6 +544,8 @@ const panels=["intro","story","activity","game","book","quiz","badge"];
 let current="م",panelIndex=0,opened=[],matched=0;
 let progress=JSON.parse(localStorage.getItem("saadLettersProgress")||"{}");
 LETTER_ORDER.forEach(l=>{if(typeof progress[l]!=="boolean")progress[l]=false});
+let lastLesson=localStorage.getItem("saadLastLesson")||"م";
+let lastStage=Number(localStorage.getItem("saadLastStage")||0);
 
 const AUDIO={
  welcome:{src:"assets/audio/welcome.webm",title:"ترحيب المعلم سعد"},
@@ -519,7 +562,7 @@ function toggleMenu(){
  const isOpen=sidebar.classList.toggle("open");
  document.body.classList.toggle("menu-open",isOpen);
 }
-function showScreen(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");document.getElementById("sidebar").classList.remove("open");document.body.classList.remove("menu-open");window.scrollTo(0,0);if(id==="badges")renderBadges()}
+function showScreen(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");document.getElementById("sidebar").classList.remove("open");document.body.classList.remove("menu-open");window.scrollTo(0,0);if(id==="badges")renderBadges();if(id==="home")renderHome()}
 function setSpeaking(on){document.getElementById("heroTeacher").classList.toggle("speaking",on);document.getElementById("heroTeacher").querySelector("img").classList.toggle("speaking",on);document.getElementById("miniTeacher").classList.toggle("speaking",on)}
 function audioEntry(key){return key==="welcome"?AUDIO.welcome:(AUDIO[current]&&AUDIO[current][key]);}
 function playTeacher(key){
@@ -540,7 +583,7 @@ function toggleAudio(){
 }
 function stopAudio(){const audio=document.getElementById("teacherAudio");audio.pause();audio.currentTime=0;setSpeaking(false);document.getElementById("audioPlayer").classList.remove("show")}
 function openLesson(letter){
- current=letter;const d=DATA[letter];
+ current=letter;lastLesson=letter;localStorage.setItem("saadLastLesson",letter);const d=DATA[letter];
  document.querySelectorAll(".nav-item[data-letter]").forEach(b=>b.classList.toggle("active",b.dataset.letter===letter));
  document.getElementById("lessonTitle").textContent="رِحْلَةُ حَرْفِ "+d.name;
  document.getElementById("lessonDesc").textContent=d.desc;
@@ -554,7 +597,7 @@ function renderSteps(){
  box.innerHTML=labels.map((x,i)=>`<button class="stage ${i===panelIndex?"active":""}" onclick="showPanel('${panels[i]}')"><span class="num">${i+1}</span><div class="emoji">${x[0]}</div><strong>${x[1]}</strong><div class="meter"><span style="width:${i<panelIndex?100:i===panelIndex?45:0}%"></span></div></button>`).join("");
 }
 function showPanel(name,doScroll=true){
- panelIndex=panels.indexOf(name);
+ panelIndex=panels.indexOf(name);lastStage=panelIndex;localStorage.setItem("saadLastStage",String(panelIndex));
  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
  const activePanel=document.getElementById("panel-"+name);
  activePanel.classList.add("active");
@@ -600,7 +643,7 @@ function renderQuiz(){
 }
 function checkQuiz(btn,ok){
  const f=document.getElementById("quizFeedback");
- if(ok){btn.classList.add("correct");f.textContent="مُمْتَازٌ يَا بَطَلُ! حَصَلْتَ عَلَى وَسَامِ حَرْفِ "+current+".";f.className="feedback show good";progress[current]=true;localStorage.setItem("saadLettersProgress",JSON.stringify(progress));document.getElementById("teacherText").textContent=f.textContent;setTimeout(()=>showPanel("badge"),700)}
+ if(ok){btn.classList.add("correct");f.textContent="مُمْتَازٌ يَا بَطَلُ! حَصَلْتَ عَلَى وَسَامِ حَرْفِ "+current+".";f.className="feedback show good";progress[current]=true;localStorage.setItem("saadLettersProgress",JSON.stringify(progress));document.getElementById("teacherText").textContent=f.textContent;renderHome();setTimeout(()=>{showPanel("badge");playTeacher("success")},700)}
  else{btn.classList.add("wrong");f.textContent="لَا بَأْسَ. حَاوِلْ مَرَّةً أُخْرَى، وَرَكِّزْ فِي صَوْتِ الْحَرْفِ.";f.className="feedback show bad";document.getElementById("teacherText").textContent=f.textContent}
 }
 function openNext(){
@@ -609,6 +652,24 @@ function openNext(){
  showScreen("badges");
  setTimeout(()=>{if(LETTER_ORDER.every(l=>progress[l]))celebrateUnit()},250);
 }
+
+function renderHome(){
+ const names={"م":"الميم","ب":"الباء","ل":"اللام","د":"الدال","ن":"النون","ر":"الراء"};
+ const icons={"م":"🍌","ب":"🦆","ل":"🍋","د":"🐔","ن":"⭐","ر":"🪶"};
+ const completed=LETTER_ORDER.filter(l=>progress[l]).length;
+ const pct=Math.round(completed/LETTER_ORDER.length*100);
+ const cards=document.getElementById("homeLetterCards");
+ if(cards)cards.innerHTML=LETTER_ORDER.map(l=>`<button class="letter-card ${progress[l]?"completed":""}" onclick="openLesson('${l}')" aria-label="ابدأ رحلة حرف ${names[l]}"><span class="check">${progress[l]?"✅":""}</span><span class="letter">${l}</span><strong>حَرْفُ ${names[l]}</strong><small>${icons[l]} ${progress[l]?"مكتمل":"ابدأ الرحلة"}</small><div class="stars">${progress[l]?"⭐⭐⭐":"☆ ☆ ☆"}</div></button>`).join("");
+ const ring=document.getElementById("progressRing");if(ring)ring.style.setProperty("--pct",pct);
+ const pp=document.getElementById("progressPercent");if(pp)pp.textContent=pct+"%";
+ const cc=document.getElementById("completedCount");if(cc)cc.textContent=completed;
+ const sc=document.getElementById("starsCount");if(sc)sc.textContent=completed*3;
+ const rc=document.getElementById("remainingCount");if(rc)rc.textContent=LETTER_ORDER.length-completed;
+ const resume=document.getElementById("resumeBox");
+ if(resume){const d=DATA[lastLesson]||DATA["م"];resume.innerHTML=`<strong>📌 آخِرُ رِحْلَةٍ: حَرْفُ ${d.name}</strong><button class="primary" onclick="resumeJourney()">مُتَابَعَةُ الرِّحْلَةِ ←</button>`}
+}
+function resumeJourney(){openLesson(lastLesson);showPanel(panels[Math.min(Math.max(lastStage,0),panels.length-1)],false)}
+
 function renderBadges(){
  const complete=LETTER_ORDER.filter(l=>progress[l]).length;
  document.getElementById("badgeList").innerHTML=LETTER_ORDER.map(l=>`<div class="card" style="text-align:center;opacity:${progress[l]?1:.55}"><div style="font-size:70px">${progress[l]?"🏅":"🔒"}</div><h2>وِسَامُ حَرْفِ ${l}</h2><p>${progress[l]?"تَمَّ الْإِنْجَازُ بِنَجَاحٍ":"أَكْمِلِ التَّقْوِيمَ لِفَتْحِ الْوِسَامِ"}</p></div>`).join("");
@@ -625,7 +686,7 @@ function celebrateUnit(){
  setTimeout(()=>document.body.classList.remove("unit-party"),2000);
 }
 function toast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),2800)}
-openLesson("م");showScreen("home");
+openLesson("م");renderHome();showScreen("home");
 </script>
 
 <script>
