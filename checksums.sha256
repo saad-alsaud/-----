@@ -1,6 +1,6 @@
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./.nojekyll
-fc91986b7b4258c3adb1b4da71cda0e43acbcbe18ef39a337d4489f80231aa4e  ./README.md
-cb47496b4ce116065ff1a7634b092f45c8baa6040ab80236f9cc59d2c65a7f49  ./VERSION.txt
+309dd1a9087fef024d3bf5c4694d06d734020084c6338b32f49f3dc2b7f90883  ./README.md
+559b7fa4bf2d54a0dff3d08a421c5cc92cb24923d96137545df446961d144fac  ./VERSION.txt
 678496e08450c292141211911b7469bdcc9a30a44101656bf0e865df7eda1f1e  ./assets/audio/README.txt
 19cd8cc2affcb5125c4c5a734971a70306290c318282ff2423c45d6bdb822825  ./assets/audio/baa/README.txt
 72eb94f4d56b20135017e44a83e882b8758418eb53eedf85cc74fea05e5eab59  ./assets/audio/baa/sounds/README.txt
@@ -20,7 +20,7 @@ a07f7e016c01f98209bb576bbfdc611a604c25673b595234a5b651ea07d0ebc3  ./assets/audio
 19cd8cc2affcb5125c4c5a734971a70306290c318282ff2423c45d6bdb822825  ./assets/audio/raa/README.txt
 72eb94f4d56b20135017e44a83e882b8758418eb53eedf85cc74fea05e5eab59  ./assets/audio/raa/sounds/README.txt
 a07f7e016c01f98209bb576bbfdc611a604c25673b595234a5b651ea07d0ebc3  ./assets/audio/raa/sounds/words/README.txt
-ed9835c5e90d09ea044bc3395384a4a749c79cecd819016470050e065ea08042  ./assets/css/app.css
+59f1c6769f68a5f901e79439b5ca229f14c14ea5d791b13a2101bb2ed4395b68  ./assets/css/app.css
 6574ed66af6359c5848065af132059598ade8d277ddb550199ad68ea291f3c66  ./assets/images/README.txt
 eb6fa0f3d41c2cae67ecef48eb6eee51f1f9bbabf34a87d82e45544c4fe2c051  ./assets/images/family.webp
 33d60e9604c7db6dea40034723a81b24adb7acfed4dfc983fa903c3a2037eaed  ./assets/images/header-desktop.webp
@@ -71,7 +71,7 @@ bdfce6579ff05f17d81e50a3c1d8d51a02e3051af69f1f596d4147a348a84fc6  ./assets/image
 323b6d9f63825d667f4b845194d4dffd1fec179a2aa81f8abd7f2fb4014d3471  ./assets/images/sounds/reference/approved-sounds-board.webp
 8e9213eca8fe1efc005deea21254aad6510e5d4382ffdbe80d762bd1210418e0  ./assets/images/sounds/reference/extracted-36-contact-sheet.webp
 028386a7f36cb2996f23f0ecc968a734abc8a0bfc8c3438f59421b121f014150  ./assets/images/teacher-saad.webp
-bfe2b51eee219057b549f5d36b5a6e0d770e52b72df3c87b4036c01be9a10571  ./assets/js/app.js
+90963129a74d3e4285283d9343e7b1b110ac98acc79d7f4e32f2e7862f528ecb  ./assets/js/app.js
 c7dec45accb77ac3d900d0af6f9e8551bba3ef10e154aa8f99050383dd2ae750  ./assets/js/lesson-data.js
 62ea8c977f66c6cb4f4e5c3d4a9aba144680cdce936fbe28e035fcfbbec33e99  ./assets/js/sound-data.js
 c706c8d865b7832bf3b03e068bb8e18c4e68dde76a3f6bb772db3eea0a80777d  ./audio-manager.html

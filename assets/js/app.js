@@ -4,10 +4,10 @@ const LETTER_ORDER=['meem','baa','laam','daal','noon','raa'];
 const STAGES=[
  {id:'intro',label:'المقدمة',icon:'👋'},
  {id:'story',label:'القصة',icon:'📖'},
- {id:'activity',label:'النشاط',icon:'🎯'},
+ {id:'activity',label:'النشاط',icon:'🎮'},
  {id:'game',label:'اللعبة',icon:'🎮'},
- {id:'sounds',label:'الأصوات',icon:'🔊'},
- {id:'assessment',label:'التقويم',icon:'✅'},
+ {id:'sounds',label:'الأصوات',icon:'🗣️'},
+ {id:'assessment',label:'التقويم',icon:'🎯'},
  {id:'success',label:'الوسام',icon:'🏅'}
 ];
 const lessons=window.LESSON_DATA||{};
@@ -32,7 +32,7 @@ function renderLetterCards(){const html=LETTER_ORDER.map(letterCard).join('');$(
 function renderStats(){const done=LETTER_ORDER.filter(id=>stateFor(id).completed).length;$('#doneCount').textContent=done;$('#starCount').textContent=done*3;$('#remainCount').textContent=6-done;$('#percent').textContent=Math.round(done/6*100)+'%';renderLetterCards()}
 function openLesson(id,stage=null){currentLetter=id;const s=stateFor(id);currentStage=stage==null?Math.min(s.stage,6):stage;renderLesson();showView('lesson')}
 function renderLesson(){stopActivePlayback();const l=lesson(currentLetter),s=stateFor(currentLetter);document.documentElement.style.setProperty('--lesson-color',l.color||'#15845c');$('#lessonTitle').textContent=`حرف ${l.name} (${l.letter})`;$('#lessonSubtitle').textContent='رحلة تعليمية من سبع مراحل؛ استمع، واكتشف، والعب، ثم احصل على الوسام.';$('#lessonProgress').style.width=((s.done.length/7)*100)+'%';
- $('#lessonSteps').innerHTML=STAGES.map((st,i)=>`<button class="step ${i===currentStage?'active':''} ${s.done.includes(i)?'done':''}" data-stage="${i}"><span>${s.done.includes(i)?(st.id==='sounds'?'🗣️':'✓'):st.icon}</span>${st.label}</button>`).join('');
+ $('#lessonSteps').innerHTML=STAGES.map((st,i)=>`<button class="step ${i===currentStage?'active':''} ${s.done.includes(i)?'done':''}" data-stage="${i}"><span>${st.icon}</span>${st.label}</button>`).join('');
  $('#panels').innerHTML=buildPanels(l);$$('[data-stage]').forEach(b=>b.onclick=()=>{currentStage=+b.dataset.stage;renderLesson()});$$('.panel').forEach((p,i)=>p.classList.toggle('active',i===currentStage));$('#prevStage').disabled=currentStage===0;$('#nextStage').textContent=currentStage===6?'العودة للرئيسية':'التالي';bindPanelEvents(l)}
 function soundWordMarkup(s){return `<span>${s.before||''}</span><mark>${s.target}</mark><span>${s.after||''}</span>`}
 function soundVisual(s){return `<div class="sound-image" aria-label="صورة ${s.word}"><img src="${s.image}" alt="${s.word}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="sound-fallback" hidden>${s.fallback||'🖼️'}</span></div>`}
@@ -68,6 +68,7 @@ function shuffle(a){return a.sort(()=>Math.random()-.5)}
 function bindMemory(){let open=[],matched=0;$$('.mem').forEach(b=>b.onclick=()=>{if(b.classList.contains('open')||b.classList.contains('matched')||open.length===2)return;b.classList.add('open');open.push(b);if(open.length===2){const[a,c]=open,ok=a.dataset.memory===c.dataset.memory&&a.dataset.key!==c.dataset.key;setTimeout(()=>{if(ok){a.classList.add('matched');c.classList.add('matched');matched+=2;if(matched===6){completeStage(currentLetter,3);toast('أكملت لعبة الذاكرة!');renderLesson()}}else{a.classList.remove('open');c.classList.remove('open')}open=[]},550)}})}
 function stopActivePlayback(){playbackToken++;if(activeAudio){activeAudio.pause();activeAudio.src='';activeAudio=null}}
 function beginPlayback(){stopActivePlayback();return playbackToken}
+function audioFileAvailable(path){return new Promise(resolve=>{const a=new Audio();let settled=false,timer=null;const done=v=>{if(settled)return;settled=true;if(timer)clearTimeout(timer);a.onloadedmetadata=null;a.oncanplaythrough=null;a.onerror=null;try{a.removeAttribute('src');a.load()}catch{}resolve(v)};a.preload='metadata';a.onloadedmetadata=()=>done(true);a.oncanplaythrough=()=>done(true);a.onerror=()=>done(false);timer=setTimeout(()=>done(false),2500);a.src=path;try{a.load()}catch{done(false)}})}
 function playClip(path,_unusedText,token,quiet=false){return new Promise(resolve=>{if(token!==playbackToken)return resolve(false);const a=new Audio(path);activeAudio=a;let settled=false;const done=v=>{if(settled)return;settled=true;if(activeAudio===a)activeAudio=null;resolve(v)};a.onended=()=>done(token===playbackToken);a.onerror=()=>{if(token===playbackToken&&!quiet)toast('🎙️ هذا التسجيل لم يُسجَّل بعد. سجّله من الاستوديو أولًا.');done(false)};a.play().catch(()=>{if(token===playbackToken&&!quiet)toast('🎙️ هذا التسجيل غير متاح بعد. سجّله من الاستوديو أولًا.');done(false)})})}
 function playAudio(path,onEnded,quiet=false){const a=new Audio(path);a.onended=()=>onEnded?.();a.onerror=()=>{if(!quiet)toast('ملف الصوت غير موجود بعد: '+path);else toast('سجّل هذا الصوت من الاستوديو أولًا')};a.play().catch(()=>toast('تعذر تشغيل الصوت؛ تأكد من الملف والمسار'))}
 function renderStories(){$('#storyList').innerHTML=LETTER_ORDER.map(id=>{const l=lesson(id);return `<article class="card dash-card"><h2>${l.letter} — ${l.name}</h2><p>${l.story}</p><button class="cta primary" data-story="${id}">استمع</button></article>`}).join('');$$('[data-story]').forEach(b=>b.onclick=()=>playAudio(lesson(b.dataset.story).audio.story))}
