@@ -1,5 +1,5 @@
 {
-  "version": "3.1.0",
+  "version": "3.1.1",
   "format": "webm",
   "files": [
     {
@@ -21,43 +21,73 @@
       "letter": "meem",
       "type": "sound",
       "sound": "مَ",
-      "word": "مَدْرَسَة",
       "path": "assets/audio/meem/sounds/short-a.webm"
+    },
+    {
+      "letter": "meem",
+      "type": "word",
+      "word": "مَدْرَسَة",
+      "path": "assets/audio/meem/sounds/words/madrasa.webm"
     },
     {
       "letter": "meem",
       "type": "sound",
       "sound": "مُ",
-      "word": "مُثَلَّث",
       "path": "assets/audio/meem/sounds/short-u.webm"
+    },
+    {
+      "letter": "meem",
+      "type": "word",
+      "word": "مُثَلَّث",
+      "path": "assets/audio/meem/sounds/words/muthallath.webm"
     },
     {
       "letter": "meem",
       "type": "sound",
       "sound": "مِ",
-      "word": "مِفْتَاح",
       "path": "assets/audio/meem/sounds/short-i.webm"
+    },
+    {
+      "letter": "meem",
+      "type": "word",
+      "word": "مِفْتَاح",
+      "path": "assets/audio/meem/sounds/words/miftah.webm"
     },
     {
       "letter": "meem",
       "type": "sound",
       "sound": "مَا",
-      "word": "حِمَار",
       "path": "assets/audio/meem/sounds/long-aa.webm"
+    },
+    {
+      "letter": "meem",
+      "type": "word",
+      "word": "حِمَار",
+      "path": "assets/audio/meem/sounds/words/himar.webm"
     },
     {
       "letter": "meem",
       "type": "sound",
       "sound": "مُو",
-      "word": "عَمُود",
       "path": "assets/audio/meem/sounds/long-uu.webm"
+    },
+    {
+      "letter": "meem",
+      "type": "word",
+      "word": "عَمُود",
+      "path": "assets/audio/meem/sounds/words/amood.webm"
     },
     {
       "letter": "meem",
       "type": "sound",
       "sound": "مِي",
-      "word": "جَمِيل",
       "path": "assets/audio/meem/sounds/long-ii.webm"
+    },
+    {
+      "letter": "meem",
+      "type": "word",
+      "word": "قَمِيص",
+      "path": "assets/audio/meem/sounds/words/qamis.webm"
     },
     {
       "letter": "baa",
@@ -78,43 +108,73 @@
       "letter": "baa",
       "type": "sound",
       "sound": "بَ",
-      "word": "بَطَّة",
       "path": "assets/audio/baa/sounds/short-a.webm"
+    },
+    {
+      "letter": "baa",
+      "type": "word",
+      "word": "بَطَّة",
+      "path": "assets/audio/baa/sounds/words/batta.webm"
     },
     {
       "letter": "baa",
       "type": "sound",
       "sound": "بُ",
-      "word": "بُرْتُقَال",
       "path": "assets/audio/baa/sounds/short-u.webm"
+    },
+    {
+      "letter": "baa",
+      "type": "word",
+      "word": "بُرْتُقَال",
+      "path": "assets/audio/baa/sounds/words/burtuqal.webm"
     },
     {
       "letter": "baa",
       "type": "sound",
       "sound": "بِ",
-      "word": "بِسَاط",
       "path": "assets/audio/baa/sounds/short-i.webm"
+    },
+    {
+      "letter": "baa",
+      "type": "word",
+      "word": "بِنْت",
+      "path": "assets/audio/baa/sounds/words/bint.webm"
     },
     {
       "letter": "baa",
       "type": "sound",
       "sound": "بَا",
-      "word": "بَاب",
       "path": "assets/audio/baa/sounds/long-aa.webm"
+    },
+    {
+      "letter": "baa",
+      "type": "word",
+      "word": "بَاب",
+      "path": "assets/audio/baa/sounds/words/bab.webm"
     },
     {
       "letter": "baa",
       "type": "sound",
       "sound": "بُو",
-      "word": "حُبُوب",
       "path": "assets/audio/baa/sounds/long-uu.webm"
+    },
+    {
+      "letter": "baa",
+      "type": "word",
+      "word": "بُوق",
+      "path": "assets/audio/baa/sounds/words/buq.webm"
     },
     {
       "letter": "baa",
       "type": "sound",
       "sound": "بِي",
-      "word": "كَبِير",
       "path": "assets/audio/baa/sounds/long-ii.webm"
+    },
+    {
+      "letter": "baa",
+      "type": "word",
+      "word": "رَبِيع",
+      "path": "assets/audio/baa/sounds/words/rabee.webm"
     },
     {
       "letter": "laam",
@@ -135,43 +195,73 @@
       "letter": "laam",
       "type": "sound",
       "sound": "لَ",
-      "word": "لَبَن",
       "path": "assets/audio/laam/sounds/short-a.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "word",
+      "word": "لَبَن",
+      "path": "assets/audio/laam/sounds/words/laban.webm"
     },
     {
       "letter": "laam",
       "type": "sound",
       "sound": "لُ",
-      "word": "لُعْبَة",
       "path": "assets/audio/laam/sounds/short-u.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "word",
+      "word": "لُعْبَة",
+      "path": "assets/audio/laam/sounds/words/luba.webm"
     },
     {
       "letter": "laam",
       "type": "sound",
       "sound": "لِ",
-      "word": "لِسَان",
       "path": "assets/audio/laam/sounds/short-i.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "word",
+      "word": "لِسَان",
+      "path": "assets/audio/laam/sounds/words/lisan.webm"
     },
     {
       "letter": "laam",
       "type": "sound",
       "sound": "لَا",
-      "word": "لَاعِب",
       "path": "assets/audio/laam/sounds/long-aa.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "word",
+      "word": "لَافِتَة",
+      "path": "assets/audio/laam/sounds/words/lafitah.webm"
     },
     {
       "letter": "laam",
       "type": "sound",
       "sound": "لُو",
-      "word": "حُلُول",
       "path": "assets/audio/laam/sounds/long-uu.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "word",
+      "word": "مَبْلُول",
+      "path": "assets/audio/laam/sounds/words/mablul.webm"
     },
     {
       "letter": "laam",
       "type": "sound",
       "sound": "لِي",
-      "word": "جَلِيل",
       "path": "assets/audio/laam/sounds/long-ii.webm"
+    },
+    {
+      "letter": "laam",
+      "type": "word",
+      "word": "حَلِيب",
+      "path": "assets/audio/laam/sounds/words/halib.webm"
     },
     {
       "letter": "daal",
@@ -192,43 +282,73 @@
       "letter": "daal",
       "type": "sound",
       "sound": "دَ",
-      "word": "دَجَاجَة",
       "path": "assets/audio/daal/sounds/short-a.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "word",
+      "word": "دَجَاج",
+      "path": "assets/audio/daal/sounds/words/dajaj.webm"
     },
     {
       "letter": "daal",
       "type": "sound",
       "sound": "دُ",
-      "word": "دُبّ",
       "path": "assets/audio/daal/sounds/short-u.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "word",
+      "word": "دُبّ",
+      "path": "assets/audio/daal/sounds/words/dubb.webm"
     },
     {
       "letter": "daal",
       "type": "sound",
       "sound": "دِ",
-      "word": "دِيك",
       "path": "assets/audio/daal/sounds/short-i.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "word",
+      "word": "دِرْع",
+      "path": "assets/audio/daal/sounds/words/dira.webm"
     },
     {
       "letter": "daal",
       "type": "sound",
       "sound": "دَا",
-      "word": "دَار",
       "path": "assets/audio/daal/sounds/long-aa.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "word",
+      "word": "دَار",
+      "path": "assets/audio/daal/sounds/words/dar.webm"
     },
     {
       "letter": "daal",
       "type": "sound",
       "sound": "دُو",
-      "word": "حُدُود",
       "path": "assets/audio/daal/sounds/long-uu.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "word",
+      "word": "دُودَة",
+      "path": "assets/audio/daal/sounds/words/duda.webm"
     },
     {
       "letter": "daal",
       "type": "sound",
       "sound": "دِي",
-      "word": "جَدِيد",
       "path": "assets/audio/daal/sounds/long-ii.webm"
+    },
+    {
+      "letter": "daal",
+      "type": "word",
+      "word": "دِيك",
+      "path": "assets/audio/daal/sounds/words/dik.webm"
     },
     {
       "letter": "noon",
@@ -249,43 +369,73 @@
       "letter": "noon",
       "type": "sound",
       "sound": "نَ",
-      "word": "نَجْمَة",
       "path": "assets/audio/noon/sounds/short-a.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "word",
+      "word": "نَمِر",
+      "path": "assets/audio/noon/sounds/words/namir.webm"
     },
     {
       "letter": "noon",
       "type": "sound",
       "sound": "نُ",
-      "word": "نُقُود",
       "path": "assets/audio/noon/sounds/short-u.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "word",
+      "word": "نُجُوم",
+      "path": "assets/audio/noon/sounds/words/nujum.webm"
     },
     {
       "letter": "noon",
       "type": "sound",
       "sound": "نِ",
-      "word": "نِمْر",
       "path": "assets/audio/noon/sounds/short-i.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "word",
+      "word": "نِسْر",
+      "path": "assets/audio/noon/sounds/words/nisr.webm"
     },
     {
       "letter": "noon",
       "type": "sound",
       "sound": "نَا",
-      "word": "نَافِذَة",
       "path": "assets/audio/noon/sounds/long-aa.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "word",
+      "word": "نَار",
+      "path": "assets/audio/noon/sounds/words/nar.webm"
     },
     {
       "letter": "noon",
       "type": "sound",
       "sound": "نُو",
-      "word": "جُنُود",
       "path": "assets/audio/noon/sounds/long-uu.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "word",
+      "word": "نُور",
+      "path": "assets/audio/noon/sounds/words/nur.webm"
     },
     {
       "letter": "noon",
       "type": "sound",
       "sound": "نِي",
-      "word": "مُنِير",
       "path": "assets/audio/noon/sounds/long-ii.webm"
+    },
+    {
+      "letter": "noon",
+      "type": "word",
+      "word": "نِيل",
+      "path": "assets/audio/noon/sounds/words/nil.webm"
     },
     {
       "letter": "raa",
@@ -306,43 +456,73 @@
       "letter": "raa",
       "type": "sound",
       "sound": "رَ",
-      "word": "رَمَّان",
       "path": "assets/audio/raa/sounds/short-a.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "word",
+      "word": "رَمْل",
+      "path": "assets/audio/raa/sounds/words/raml.webm"
     },
     {
       "letter": "raa",
       "type": "sound",
       "sound": "رُ",
-      "word": "رُزّ",
       "path": "assets/audio/raa/sounds/short-u.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "word",
+      "word": "رُمَّان",
+      "path": "assets/audio/raa/sounds/words/rumman.webm"
     },
     {
       "letter": "raa",
       "type": "sound",
       "sound": "رِ",
-      "word": "رِيشَة",
       "path": "assets/audio/raa/sounds/short-i.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "word",
+      "word": "رِجْل",
+      "path": "assets/audio/raa/sounds/words/rijl.webm"
     },
     {
       "letter": "raa",
       "type": "sound",
       "sound": "رَا",
-      "word": "رَامِي",
       "path": "assets/audio/raa/sounds/long-aa.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "word",
+      "word": "فَرَاشَة",
+      "path": "assets/audio/raa/sounds/words/farasha.webm"
     },
     {
       "letter": "raa",
       "type": "sound",
       "sound": "رُو",
-      "word": "حُرُوف",
       "path": "assets/audio/raa/sounds/long-uu.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "word",
+      "word": "خَرُوف",
+      "path": "assets/audio/raa/sounds/words/kharuf.webm"
     },
     {
       "letter": "raa",
       "type": "sound",
       "sound": "رِي",
-      "word": "سَرِير",
       "path": "assets/audio/raa/sounds/long-ii.webm"
+    },
+    {
+      "letter": "raa",
+      "type": "word",
+      "word": "سَرِير",
+      "path": "assets/audio/raa/sounds/words/sarir.webm"
     }
   ]
 }
