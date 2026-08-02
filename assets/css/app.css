@@ -22,3 +22,11 @@
 
 /* v3.1.8 studio cleanup + voice clarity */
 .voice-enhance-box{margin:14px 0;padding:14px 16px;border:1px solid #d8e9e3;border-radius:16px;background:#f5fbf9}.enhance-switch{display:flex;gap:12px;align-items:flex-start;cursor:pointer}.enhance-switch input{width:20px;height:20px;margin-top:2px;accent-color:#15845c}.enhance-switch span{display:grid;gap:4px}.enhance-switch small,.voice-enhance-box>small{color:#577069}.voice-enhance-box>small{display:block;margin-top:8px}.record-group{border-top:1px solid #edf2ef;padding-top:10px;margin-top:12px}.record-group-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;margin-bottom:7px;border-radius:13px;background:color-mix(in srgb,var(--group-color) 10%,white);border-inline-start:5px solid var(--group-color)}.record-group-head>div{display:grid}.record-group-head small{color:#687a74;font-size:.78rem}.record-progress{font-weight:900;background:#fff;padding:5px 9px;border-radius:999px;border:1px solid #dbe8e3}.record-progress.complete{background:#e8f8ef;color:#0d744b;border-color:#acd9c2}.record-list .navbtn{display:flex;justify-content:space-between;gap:10px;align-items:center}.rec-state{font-size:.76rem;white-space:nowrap}.rec-state.ready{color:#0d744b}.rec-state.missing{color:#8a6252}
+/* 3.1.9: restore highly visible recording status badges in the left list */
+.record-list .rec-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:right}
+.record-list .rec-label{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.record-list .rec-state{display:inline-flex;align-items:center;justify-content:center;min-width:92px;padding:5px 9px;border-radius:999px;border:1px solid #d7e2de;background:#f4f7f6;color:#52645d;font-size:.77rem;font-weight:950;line-height:1.2;white-space:nowrap;float:none}
+.record-list .rec-state.ready{background:#e8f8ef;color:#0d744b;border-color:#acd9c2}
+.record-list .rec-state.missing{background:#fff4df;color:#8a5b12;border-color:#efd19a}
+.record-list .rec-state.checking{background:#eef3f6;color:#66757d;border-color:#dbe4e8}
+@media(max-width:620px){.record-list .rec-state{min-width:78px;font-size:.7rem;padding:4px 6px}.record-list .rec-row{gap:6px}}
